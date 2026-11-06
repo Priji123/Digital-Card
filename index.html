@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Shabin T. R | IT Support & Office Administration | Digital Business Card</title>
+  <meta name="description" content="Digital business card for Shabin T. R - IT Support, Network Configuration, Reprographics & Office Administration Professional with over 12 years of experience.">
+  <meta name="theme-color" content="#070b14">
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="Shabin T. R - Digital Business Card">
+  <meta property="og:description" content="IT Support, Network Infrastructure & Reprographics Specialist with 12+ Years Experience (UAE & India).">
+  <meta property="og:type" content="profile">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            cyan: {
+              400: '#22d3ee',
+              500: '#06b6d4',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- FontAwesome & QRCode Library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Manjari:wght@400;700&display=swap');
+    body {
+      font-family: 'Plus Jakarta Sans', 'Manjari', -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .glow-cyan {
+      box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.35);
+    }
+    .glass-nav {
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(6, 182, 212, 0.4);
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="bg-[#070b14] text-slate-100 min-h-screen antialiased flex flex-col justify-between selection:bg-cyan-500 selection:text-black">
+
+  <!-- Desktop Ambient Frame Background -->
+  <div class="fixed inset-0 pointer-events-none opacity-40 z-0">
+    <div class="absolute -top-40 -left-40 w-96 h-96 bg-cyan-600 rounded-full filter blur-[128px]"></div>
+    <div class="absolute top-1/2 -right-40 w-96 h-96 bg-blue-700 rounded-full filter blur-[128px]"></div>
+  </div>
+
+  <!-- Main Mobile Card Wrapper (max-w-[440px]) -->
+  <main class="relative z-10 w-full max-w-[440px] mx-auto min-h-screen flex flex-col bg-[#0d1527]/80 backdrop-blur-xl border border-slate-700/60 shadow-2xl shadow-2xl transition-all duration-300">
+
+    <!-- Top Utility Navigation Bar -->
+    <header class="px-5 pt-4 pb-2 flex items-center justify-between border-b border-slate-800/80">
+      <div class="flex items-center space-x-2">
+        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">
+          <i class="fa-solid fa-circle-check text-[10px] mr-1.5 text-emerald-400"></i>
+          <span data-i18n="verified">Verified Professional</span>
+        </span>
+      </div>
+
+      <div class="flex items-center space-x-2">
+        <!-- Theme Toggle Pill -->
+        <a href="index_bright.html" class="px-2.5 py-1 text-xs font-medium rounded-lg transition-all border bg-slate-800 text-slate-300 border-slate-700 hover:bg-slate-700 hover:text-white" title="Switch Theme">
+          ☀️ Bright Edition
+        </a>
+
+        <!-- Bilingual Switcher Button -->
+        <button id="lang-toggle-btn" onclick="toggleLanguage()" class="px-2.5 py-1 text-xs font-semibold rounded-lg transition-all flex items-center space-x-1.5 border bg-cyan-500/10 text-cyan-400 border-cyan-500/30 hover:bg-cyan-500/20">
+          <i class="fa-solid fa-globe text-xs"></i>
+          <span id="lang-btn-text">മലയാളം</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Hero Profile Section -->
+    <section class="px-5 pt-6 pb-4 text-center">
+      <!-- Avatar with Glow Ring -->
+      <div class="relative inline-block mx-auto mb-4">
+        <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-full p-1 bg-gradient-to-tr from-cyan-500 to-blue-600 glow-cyan">
+          <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCAFoAWgDASIAAhEBAxEB/8QAHgABAAEEAwEBAAAAAAAAAAAAAAcEBQYIAQIDCQr/xABEEAABAwIEBAMGAwgAAwcFAAABAAIDBBEFBhIhBzFBURMiYQgUMkJxgSORoQkVM1JiscHRFiTwJTRTcqLh8UNEY3PC/8QAGwEBAAIDAQEAAAAAAAAAAAAAAAEFAgMEBgf/xAAzEQACAQMDAwIEBQQCAwAAAAAAAQIDBBESITEFQVETIjJhcYEUFZGx8COhwdFC4TNi8f/aAAwDAQACEQMRAD8A+VSIiAIiIAiIgCIiAIiIAiIgCIiAIiuOD5dxLH6xlJh9HLVVMguyJg3d9L8/sgLcizJ/CnH6RuIe+0wopqDR49NMbS+b4Q0cnEi5FjbbmsvxbgPT0UeFvgxiSobWU/jyu93AFK7/AMGTf+J6Db1WUYuTSXcjKIeRZhQcOaysxWlgcXQ08tcyjcXMPisLiLkt5bNu7na3VSxxA9l/CsrYDPXYRmibH6mOUMbRQ0QbJICbXb5unM36LOdOVOTg+zx5/ugnnc13RbG4l7LWDUOT5cTjze6oxIUvix0TKMWdLa4YXarix2JtsrXwg4O5fqJa457parwg0GlNHMWaj82rbYDp3WGl4zgkgZFs9nXg7w5ipoTl6lxDxSfP49U4i3psogxrhPibKqT3ClvACban3Nui642rlRdbWtu2fd9kb3SxSVXUt3jHf6teDAEWbZe4YVuKNxD3wTULqWPxGNMV/eDcDQz+re++1gVf8K4LQVtPVPnxWSF8LGvawU4PjEi+lm/MfCb/ADem61KhNwVTs3jnv/O/Bz53wRUimdvACmNNPI7GpWujMYaPdhZ+u13DflHfz9tJtdRtimTsQosWqKOCnlqWRyaGShthJ/UPQ8x6LCpSlSk4S5/X9hlYyWFF6S08sDi2SNzCNiHCy81qJCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAqzC8HrcarIqWhpZKqeR7Y2sjbfzONgL9Lnur/wuwvAsYzzhVLmQ1TcHfMBOaVpLj2abbhpOxI3A3C2Iw7Csu8PsSlqcJb4LI5ZW0s0/8QwOFvCLRs4A3LXu8wupSbBGWB8EqvBKXDsSxB0LsQFQHSYdKwPaxgPJ3QnnccuSzii/dmVqmE0tICYZTPTNDtT6d55lrult7DpcryxvHTiDjHHM5sb+eg8/S/f6K1mmbBCzQ90jHfyggg9iea6XPMIwwts743efL7/LJjjcyXFs70+JRjx4PHmDRGGycmtHIfRWuXNtTPI3xIWshtp8OMDQfUqyPc6RrmhrY2Dva6oqj4mNdqe52zQ0237LTl9icGW0man0jjtE6TuWanBvoV2jzcZKp8wmlpgNyeQcfssMFS2llH4c0EzdtR8wK8qvGY3aWvdfvYWWSchsZziGcqmoiLo/Ajkb8zTcH1VrGbMUpi2dlRqbztbZ32WKNxlvmAjZID22sn7yvewOom4DTsPsmScmVVGbq2pBEpbLG7fSDZULsccWj3Zk8Uh3J1En7K0xVDnbgNAPU7lexqi2M2k5HksM+AVzsZrnCzqqp0nmQBdcQVkjn6nVM2rs5yt8eI3cGyNIB+Ym69JWsdbyiQHryTLBeIcxVVNPpdUyyi42cNVwrs/FsKxGCPxotErjYvZ8p7kLEWtDPMzUzvuSPuqltYG2D2Mewjm1SpYIO2ZsnCodFVNjFbEw97tF+pHUBRxj2WqciaeIeERc2jHlP26BSbR1xgeHwyPG+8bgS0jsQq+oy/S5hDnQu93db+EALOJ9VnmMnlkY8M10ewsNj+fdcKSswZEqm0z4IaeKEsLnv2JJPQN9FGzmlpIIII2IPRYTST9vAi2+ThERazIIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCzHhdlugxrNOHSY7S10uXWVDW1clEwk26N+l7arbhtyuuC8Ksz43lV2ZaTCKipwZk7YDLH8TyTYlo6gHYu5A81PXD/h5HkHB6meavlEs9j7sHANaLcnt6yX8uobFvRSk2Cyy4BlfJOYcTrcvxzmGoefd4ZfM6KPs3ra/K+9lZ6yrqcbqDrYQ29zqduqvMNVUPq2hoEbpTYNY3UXnsLcvoqV8VRgk0UlQY4JxuY9V3MPQrbgg94qpmBscKpjoZhctY8DSD0PdWWrzbV1crvBe2N/ItFrO9QrVi1ZJXTPJk951O1F1/MVbqmOSlIdpsRvYndQ3gFzOLTlxc1wMvMtPI/wDuurcck+douDuCrMyfVI127XX3CqJ6dznnTcgG/wBR3UaiS4zYhM/zsc5rHG5adwPorfUztmZYnzA/ECqinkfGwtuCWjUGu5ELzlw8Vn4sLwe7ORCavJGCnphbUXG5tsB1Vxo5C6+smJvK4FlQxQSawxw8Mj02KvUEfhwFweHxW3asdRJwDTNIHjnUPTZevjshtIfM07aiqQeHLOC1waDsfLZcSzmineDGCx2zoyLtIUArhURSt0kBzQdiPiAXeCpEFR7u94LDuH9CFYquY0zmuidcc2O9OrT9F5vxIVUJDvK75Xdj2+6Ay0u8OoiAdYyu036X6FeNVaCd7bAaPii9fRWmgxN88cQPlLd9XZedViXjzOdqDRewJ6hQC9trWs8NzJDpcNtXP6FVdPiDozqa+1ugNrrEnV3iRFmrWWmzSvekxC1g/Zw2seRUpglTDKpmPU8scrWtkay7ZT29VDHE/KMmEV5rWMtDI7S8Acnd/us5wfML6ZkbdLWFm2ocyD3WRYvHS5vwSemqI2Pme3S0X+bo77LbtJYMTWlFccfwOfL2JS0dRZz2HZ4GzvUK3LTwZBERAEREAREQBERAEREAREQBERAEREAREQBERAF60jWOqYhI174y8BzI/icL7geq8lsZ7LGAUGL4Nj89XhDMSkp6mB0Uzxf3V2l34g9en3QhrOxLGTsh0/DXhxI2HH6+ooqgNxCCCsZ4Ii1tv4JjO+ppO7uTiL2Ch7HcwVGK4q+B1Z7vGCHvkcefopn4tY3I3LkB90hFTTDRGS6xc3qD/paw4zVF9W+QjS2TcG/wrok03nGDVSi6dNQcnLHd4y/m8JL9EjJMTzAzC6gnDAQ5jbNqZN3EnmQsbbi0lTPrqWPnubnqVapnStsHagO/ReTnStsdTrd2lYNs24M0oBQ1QDPd5g5/M6baT9VzU4FC8bCXT0LmXWNYRUyMnBAedxsb7rNxM6KCOSzm7X0F1yVryDEanAgx92mTUOflVXQCOZhhc8PqG7tN7FXiXFHxN1Mhe4ehFx9lY66shrHAthMcwNxI3Y3+igk5niEjXWHmabgtHJeYBieLjQSNwNrhewmMzg43EnzA9fVcSXc4xvHlBuHHoeyJg4LjYuZ+Ky24bsR9V1biMbWua4GMn5i26eBPCQWPuQdgRuu8bTU6muYWOdzHRpCEHencZHN8kcgfs7zW37KkdWxVd6e5gk30B/Q9iuKylkp4yQXM35j/AK5K34o+74KljwXk3cOzhzUZJSyebqjQySCVmx2Bv8J6EK3xEkuG917zP8V7n2sSdR7LrHF4j9ti7t0TKMtLPb3/AMJpjbuDzVOXOkdcjYlVzcLlEZ1NuB81t1y6jmggYdGoXuCOf3WKnFmXpyXKOryGBrGnzk6j9V2NSfGDXHy/2Kp9T5pGuftp6ciSvaOnfLO0gXcfyB7rPJrL5hpdK6Ng8xdsL9SsjbVOoZ4ntFnAtu69vqscwy0c4+Z/bsFV4pWe+TbNJjhHTqVkgUvGvC2OdQ4jECWvGk6RsAd7n7qK1NmbmTY9kSEwta6djNDw3lpBv/hQmVMuRnIREWACIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgC2S9j7PEGGVeM5akpi9+JGOo94LrNY1gLSPqS4LW1Z5wWfV0ufsLqaWm97c2VrfCfKY433PJ5G9rXP1AXTb29W5qenRg5Pd4SbeFu3hdkt34Q27mxfHDGXVDQIoHUvgHwGi12m3R3+1r1VSjx362EAm5aOX1C2L4zYJWUdRV1obNUxVDWvMbhYgd+1x3UAVtJplfYktvezubVixxsW9kjmMLGuL4juA4Xsu0VK4tD7nc7EC66SxPik8ri0HndcxVDg8MZdzuwOw9StGfIL1SzVbQ1onja1vQRWI+6vMFc2OL8UMqj/WwEj7rFH4w9rTHETG0/M3m4rIcrZLxfM9RFDSQeK+QcytU5qCzJ4Rtp0p1ZKMVlnacU2IRufHG2BzfmZcWH0Vo9yeHh12uN93Kf8uezpV05jfVVhdKfjjY3yj0WYQez/RSANaLSdGvYHWVXLqdGPDyXlPolzNZexq00EBgeGa77OF+STRSSG5jB3sbi1wtq4/Z9fEC3XTeFfdoiGp3ou0fs+U7XF0o8Rg5NG1lqfVafg6fyGr5NU4YXPebBwtysqyOmeZWgwh5JsNHMrZ6b2c6eQNfFAIx/wDicSf1V6wXgBRwi7LmZo+Mt/63UvqlPGxEehVc+57Gpdbl+ZsOllPKY+Zu29lYZsCexjvwnkXva263in4Iz+C9tPPHGDzc5nP7KyyezXPXtIqsXghaT/8AbUzdX5nkuf8AMk3udi6LpW3+DSc4PPJI2NkLy9xs1lt3FZZgnDasknb49M4vaNbwPlHZbc4d7O2AYEW+GJaiovvNUHzH0V8/4FpsNim93iY24+It6jp9FqqdSbWII6KPRYxeqbNRsQyeaJ0o8Nwa1oI1DqVZJcBMmHnykuG9ltFjeR/3hUyOebMHPQ23RYniGQmwwFtPHpibcnVzJWNO7e2TKt09ZbRrDNhksbwwtu0crjcKoip3U2mxDnWsLi1lMmNcPTT0AqAzX4Z8zLb2UYY9SGnrZPDtYnygq+o1lUR5W6tXSZbon+GHCOxN/M4dCqiGQhxIIOk726+q8YxCdI3BcLOZyXejjc2qeWfAAb37KwjsVJlsML8RyjidLGxwm0l0bm8nbLX+WMwyvjdbU1xabdwtg8syytpKina/QyaJxDiLhptsoNzJh/7rxiopzJ4paQS8dSRcn9VnJNrILYiItRIREQBERAEREAREQBERAEREAREQBERAEREAU4ezRkSozNiU2KwYnR0TMLqYpJYal4D5mkHaIH43g28va6g8c1tj7L1Hk2vybT1QoKibOWF1ErpKp1vAiidcssOr7A+bmOSsbC6r2dZ1rebjLDWU8PDWGvunv8jhu5TUYxgt3JLjUl3y91hbc9njngyrjPmKYVRpSSWsYCJHcnHkfLyAPYLX+odBUVkg0mM2u2Mnb9VI2fsyDEJpoZQ91QJHWLtgG9BdRlUNMrg8OD7GxJ5lccjtRS1GGvedbn6gdgP8L1gy7VNh1sDGtcfM7VvbsAsly9gDsSlAezW53QFTXk7hTTNja8mxc3SXFoc4fmq2tX9Mtba0dbdkFZT4dVWPV4iDHNjjGuV5GzW9vqVtvw2yFBgFLFI2ERv0hrR1PqVV4LkXD8Cp2CKNwjLg5zCLlzvU9VI2G0gAj/Da026rzF3cTrPT2PbWFlTtlqXIo8DmmuSfDj52G5KvcWG+GxjQ2xHNxVRTubCxum/0VTIXOjDtO11WtFwmyijoA6eR7rOHKxXq6ihNxpa3rci69GteCdwQd90c4aTtZYmWTmGKOxaAR02XfwzEBpYCOvcqliaYtTtyT07KoadYbqOk8wpGTsBqadRAB35LxlAAJDbjqAvUudYA2NuoXWRwvyI+iE7FHUxao/KGkDceitlTSbXOrUByJuFeJQzTbbueioZrfbnuskskGL1dCdLjpDiNj6hY3V4Y0h3ltfcghZ5VxamucLWtyIVirYWkOv8AZZReGYSWUYDiWEmWF0bWeV1ydlrbxFwSShxCRzWaSH/ott6hovptq6C6hDiphMclVK57R1BB2V5bTaaZ5m/pqUXE1+cx4qJnyi5c4bjoelvReznGxcDZx326r3q4mU8x0ud5SWmN/QKlgkLDJG3cPaC0+i9RDdHhZbZMuyoXTVdLE4fxPwgSdrnYX/NRBxDw+rwrOOKUddTmlqYZdD4tQdaw2NxtYix+6l7K72OnfU3a2OGHUS42AIHPdRPn7MFHmHEopqOkbRsY0te1ry/W7USX6nEuJPPsOQsF1enKVKU01hY77/ZdzHPYxdERchIREQBERAEREAREQBERAEREAREQBERAEREAW1PstZXxrD8k4lizWxyYPjTnUxAcA5hjO5PW2/RarLZL2Y+JGMyRU2T/AHVjsAiMs8lTpOpj3m4bq5AHtzKzg8MFtzuz3PFahgqPHD5CCwt5LHDCyNxczTsd29/RZvxLw+GHF5DAQ9us3A2I9T6LC6aNslU3o4cj0t3WUuAjNcml0U4YCGuc4Oc49PQLZrKNOPdYi43fYE25LWPLBNPVMm+RhGx6lbP5CqjV4dG46Wna7f8AK87d8nqunbozehi1Wu0H07K7xxm7SNj+ioqRnh/F1HbkrgwhxDep2HqqGa3PW03tsVtNcDVa/oOqqnVOj5efUleEJLR5RcAKpbSOlA8t+oXNI6ovydDKXWA5o0PcQA0n1KqY6B4BIsR0A5kqpjw+U2BBabbg9VrNukomROv8Fx3XbwnEX5/bcK6tw1zTa5+hXIon6eR57lRlE4LO6N1wOX2Xk69th5jyCvXuOloG2/6rh2G3tcC3fspGDHHNOo6mm/dUlY7QBff/AAsonwl+j07BWXE8MkAFrEBSjB8ljqXgsvvt+as9YbG1rlXioje24AJ7kqy4he9wDZo5rZHc1yzgtksJfPc7jkRZRZxdwsfxDcAix/2pUhqA6Qb7LDeK9JrwrxLFwBsRbdWtB4wUl1HVk1Tx+nYKgEjzaiHd/qqCGF0gZKALN6dFkmP4eXs1NB2Jvcb2VjpYXQyMY64YN2g9vVepovKR4KvHTJmbZLw7LwpvDzJVyUmFSSaZ3xW1Oafl+i12zM2lbmHE20QtRtqZGwC9/wAMOIb+llIPEirqKPBIaSIDwqhwe89QByUWOJcSTuTuVaVJ6beNNZ3efk+2303zv+xz5i1xuERFwAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiALYX2YOImFZXwjHcDrD/2hjFTAyjAA3eGuHmJ+Fu/PvZa9KQuB2LYPhueYYscoIq7D6uF8DzUPtHCfiErh8wbpvbbv0sgJRzvTVEOPVDJWkTjUyRr/AJd1h9NBNG8eUuN77dlJmcsLD6iDES581HUQeJFU6TomZ8r2OIGoEdfzssWZH7y2KIXbrBJ23t0Wc37TKKyxgLKuproY4WXOrp87v8rbLhbgdThuFhtWPNsfN3WK8IeFHuVHTYpXsHjubeKJw2YO/wBVLbpGUIbDGGgkdF5q4qa5aVwexs6PpQ1S5PR79UhbYm391esOZ4gBI5dFjD8Sgomuknlt1NguMKz5BPUFrXRQRg/O7zFVU6bb2LqFZRSySPS4eXNva4KyLD8IL2C9rnrbosYw/OFBC2MOqGF5NtI3sfVZbhucKDQLSNc4W2ab3Wj0muTc7qOMIu8GWwWWLBuNtl7Ny3psNu5XehzbR1EmkTtL+ZB2IV3GIxTNu0tJHNYSgkbYVmyySZfvyA+q5bgtmFttI6EhZDFUsDbloIK4bJE9liNr9eijTE3epIxv9xNMhcA0D0XWTBCLl3K/MDksikqI43W8p+qpqvEYIWOc+xtve6aEQ6rRan4PHoF7aT3WKY1SRwyadrdgd1znDifRYGJTJG4sY25cOQUD5p9oimiqXNgozI/mBJJpP6XXRGjq2RXVbp092SfUGJ8joY49cguRbm4LAMy43SUUha9zmnlsNx9QomquNuI4lWh8DXRza/w3RmxZ2HqvPGcYxTG43VVVV6akg6m2DSfX6rrVm1jUcD6lnOkkaCaOrjE0EjZWHcPaVUVcTMRpzFIGnoWuFwoRhz1iOW5gfBe35ni14yO6lTAswHH6KOqbGIn2uWNdqa4dwV2Rt9KOR3aqSI14h8NnULXVlBGSCfMw729QoTrabwJCHDYutdbqyQtxKhla7+S1vWy1SzhhXuWN1VOWhoikO/OytbWWNimv4LOpEX8W8w6qDDMFNHEySlcZ/e2bPkDgfK7vboVF62T4iYbgTuF2L1c2Fv8A30xkTIa/bw2AvF4789R5gWtbrfZa2O+Iq1qxnDGvh7opVgIiLQSEREAREQBERAEREAREQBERAEREAREQBERAFUYbUNpMQpp3t1Mjla9wte4BBO3VU6IDc7M+eajitwoocXnqaehOFVBoaXLpLvFpYJPxRPELaTE8/FYnS82WMZIpGVeYMLY8DS+QbHkBe6wXghmeTHYsSy9XS1FTKaW1AxzrwwAfEAPlB5m3MqUOHdBozNhzSLkP0i+wJHNKnwG6l8SNtsMphDhsTW6vhsCVbauKQSOLbBoBJe7kAsjp2AUcXnudN7jqrLjuFPxClfBEXRmQW1N5rzbwqm57FZdLKIczjmqorK58NHqipmnSHHbV3JVswd89JMZalxfexBe+wb6hSvhvCShc8yVcjql5NwZNtP5K64lgGWcCp3S4i2mY0C34rQ4n0A5laZV4r2pEK1qTepsieuxrwmeMzEqbY/Cyc6h9VYjxYmoZfd43vBBuHwTXLvVSbLhmWK1oe3CKOjonnUKjEXCFh9QOZWOTU3DeSqdE7FsAa+/KPa33WMamrZRyS7dwfumkV2SeKtbMdNZVBxfvHKXAOZ9e/qp6ydnSevpLzzi4bcEfCVCFDwyy7VtbPhscczT5g6KTUD6i26v9BgNVgDNdFUPEXWGT5Vw1dt0W1CDfc2Hw3MBdT2e7zkXDbq40mLuMNgS4j1UQZaxed2lkxvba4UhYK5pprjrz3XIt+CySxsyvxTGhCGhx57c1iGYM3shp5DIS0t5Ancrtm3ERDE7SeWwKiLMAnxioMQke2JxsW33P37LLONjCUdTMR4jZwnx+X3ShE805JNoTy/0o7peE2NYvUyvbNS4TC/Zzqh+px77qd6bL0FK0xxRMpoWNvNNbzO7NB5kqjzlRZmwmbLeF5byi3EMXzDI+HDWVkrYnTOa0uJs4gAWHN1lY28KstoFLduhT3rMxPLvALC4PBkxLNEbyObYBsfueSz7CeEOV6FgMMja425yPDiVCmYuJ/FPK2UMKzDiuC4NDgeJV09BDKPDkLpoXFsrC0EubYtO5G9tlc8Xx7Ect1VH/AMS4bNl19YxskGIUjiaaVrmggg9DvyXRVo3Md2zkt69lN4SwSbjHCzCpdQjpo2XNy0Ntb6Kz4dkFuWqtjqVxbC692dN165UzXiEzGsdUCvgvZsx5uH+VnTY21kN3NBNuduS00azhJqTO2vbRlFSiiwUDRC1zTve4Ws/E+lFLm3E4HAtLrSc7raZ1J4U1wASDv6ha9cdMLfRZvbPYGOpiDmnrsbEK8s5qT2POdRptRTIb4lVzo8n1sHvdC0ugjb4Fv+bcNQPlNv4Vxu2/xC6gU8ypaxLh3nDi7napost4DPiktPpha2FzWA35AFxAJ9BusQ4m8Ks18Hc2VOWs5YJUYDjdOyOSSkqHNcQ17A9p1NJabhw5HY7GxBC9Bc3Cr6IpY0rH7v8Ayee0OCy+5iiIi4wEREAREQBERAEREAREQBERAEREAREQBERAFf8AJOQcwcRcbZhGXMJqcXrzG6YxU7L6I2/E955MYLgFzrC5G+6sA5r6lfs6855ZyP7M2MTYHglA7OdbLUQ41jDiHyR04daGJ7XctTSSAPKdNzchMPsYuUY41PGWlv5bwl928Gp+XeC+aeD0NDXzwUNa7EQ1s8kLiX4fdt3B1/i7eW42WV5NkbDmnDLEOd7xoJ6OJPRTxminbmWmcMOZFPSucW+X4hv17KPqjIFVlzF8ErZ2tbE2ua3cW57hcP4+nV/pfpt+56Wr0udGlGrFbr4t/n2WNtvr5+S2RhhAia22kNFiFXwYWJGXNrgW2XSiiPhMa43J5kq90rGiMC3TqvN3EmpNo9HbQTgkzEMaikoYHCN/h3+e6gTO+MzxZiZDRxMrsVqDpjqq11oadv8AMQtk8UwtlZrDxZnQX5rFavJuH1byZqOOZx53b2XFGWJapFo4ZhpiYDxB9mD99cE8TxmHGXZrze1onEkc1o44rbtijvzHqOihSgzRgMuIw01HwboXmbADg4ZLLNqkrARfEG/17Eafh3W2GH5JhjDm0tVNSt6hjy0K8UnD6kg8NzmtkfGSWuawAi/Ox6XVzC/UY4SwecqdJcpZc875/m5RcOsn5Oy3wayxQY1XCHM1PTl078PYXPFzcNdp2LgO69aKlGI0lS1jHujjvpnkYWF7eht372WV0WEx4fE1rY44W9tIBP8AtW3HcSmnDqWC+jkT2XHc1fW92MFpaW34aOhNv6mH4Y58MwYRuHEf6UpZfjMFHqfbU5oueij6mw50NVGSNxuQs4w57/AbtsRY7qs4LhLUWrPdE4ROljIJcN29lHuC0plrmEgEN5X6FSRmSRrmuYCS4N3v09FgmFRmCueDzJuAoTy8kyWEX3DsPrsPxhlbHS0lS6JwMQqHEsG25Le9+RXbjnhtXxoypSUWJUkeH4nhjzJQ4lhc7mysJFiDfofRXKhj7jY7q6wUQJ1bNurKlcygsRZVV7KnXkpTW6NO8K9mOTDcSw+bGq+euoYZvHqcPie4h5vcBt+Rd1PPdTFxBxnEuJeEtwM4PT4dg0bQyOIs1loAsACeWwUw1WEa7loY6/UDdWOry85zybEDnsOayqXdSSxkwpdPoQepxy0QplbhtV5UYyOjqnywCxbHLvo9PopRw6nkEAa8AG29lcf3OIXbXFu6qIqMNF7fcrjb1PUdjwo6DH62l0tLzuL9FEPHjLkmIuwmaEB8z3OgDPqp0qqduhzbX35KPuIzRBSYZO5ocIq+O9+xBH+Vb2tSUN48lHeU4zXu42MQ4VUTsqCkiFDolgeJDMPlI3DvqO6ccsmZD4q5NzNW4pUYjiucJTqwuukkt7m9vmLNz5/EddpDthquN1LceWxR1TY3xgSTNIDD8qsE2EYPhcL6nFmugpY5w18kbA83vsLdidr9Oa5bi5qXDj6smsNSym1ut98YyvK4a2exd2fS6dVqhTTxPEGljU02nhNqWG2uUv1yfKisppKKqmp5WGOWJ5Y9h+VwNiPzXkrznVrW5xx0MFmCvn0i99vEdZWZevi8pM+W1Y6Kko+GwiIsjUEREAREQBERAEREAREQBERAEREAREQAcwvov7EeQmV/s8vx/DMbhdVGsmpMSwmFwc9oLiYXygbt2DtIPMG4XzoW7n7PzPNVlrKOd8PgjL4a+rpRM5vRoZJz7jdUPWad1OhCVo8SjKLafeOcSXy2b3LnpNScLhwhLGpNPh7bPv8ANL7mxeVcmx4Waxkjtckkgu5u1r9lScYKU4Zl6hZK5jzFiNOY5bc7vAN/ssop6h0eLyNAJbKxkg9Vh/HiqniywWva3S2phk83O4eCqShLRUhH5/5PoF7H1aU5f+uf7Ek4bub22vsrzECCRzusay7U+JDTn+aNrufcArKoHDbkT1XVXjuyqtp7I7igL2WNifVdGYOwuuBt6q5NePCIAsfRcRseNx5nFVcti7gmdIMMij5MBvzuFXRxNiHY97bBI6WV7fOfoAq2CguRqFwOijVgz055LXVUjqppDRoB6nmrXiGGx0MFw0XHdZsaYBt9IAssFzlVeG8R6uZ3TLbIaUTHXyB1QS3ptdZDhrnujsCfqArRh9CJAHWu0/qsywjDR4VyOQ6LGpsbqO+TEcb+F9iS4m7gQsZjdGKq17SW1WPOykTHcMYTfRy5FYbiNEyGZxIaL8nDmphhoxqPBkeBMjq4g07d9+Suvub6Vxb8Q6LGco1Oqoc1rvM02I9FIcVIJ2B1twFHBjsyzNJbzbz5lU8zrE2NwVd5ImaiCCLeip3wDSSNIA6kLJSZi4Fllo/F3cvKWlEbSAOfdXqVjIuo35XVmrqgNvY72PNbUznlHBY61p3v+nRRbxgqzRZQqp2k64ZYpW/UPCkypqNR2IF1E/GciXJeLDlpa19+1iN1dWse55+9k0miT8MxYYhWYdWTmwmDHm/qFbsXxPBaHC8QqMaw4Yxg0VXIKii16PeIiCHRhw5ahcX6XuvHCK2PFMjYY5jmtnjpIpY5G/NsNlbYsqu4j0FPgxximwKOSpc6aqqm3aL7dxc9h1Oypp1naxdZv4U3w328LLZ6ek7ebirram3HV9MrPG/Hg+dPtHzZZn4z5lkyfgUeW8uOkhNHhccj5BTt8Fl2lzyS46rkm+5Jtso0WWcV6mOo4jZhERLo4ax9M15FtYjPh6rdL6b26XssTXtbaU50ISqctLP1wfM+qq1XULhWL/o65aOfh1PTzvxjnfyERF0lWEREAREQBERAEREAREQBERAEREAREQBT77IWZsQwzO1dhsE076WqpS/3KI3Eswe1rXaepAc77EqAlf8AIWaKvJmcMKxmhlZBU0kwc2SRuprQRpcSOvlJWmtGU6coweGWfTKtGheUqlxDVBNZWcf33Pq3RSuE1GZGlkzHeG9h6WKxTjtW6spYu2SzngNe153GxuuOH2JOrcKoqyYtdBUxtmp7OJvE5vkd9xuqXjBgfvuUsUlE7jG2nJEY5u9F5F05RrQa8p+D6LWnBQrQ1J4UllPKeMrZrZ/Uy7hzXmry/hUrjcup2bk+gUg0z7aSHKFuDOLe9ZPwzUSTGwR2+gUx0smpg6ruuI7MobWW8S9QaS0G4uOquEIJaGsPPmSrRTnzCyvFLEZmhjTud1RTWGemhui60tOfDbvqVyp6U3BNrcz6LzootMQBvcbbqvZIG7GwWGDZnfYt2MTsoqR7tuSiiRkmPYjLI9xLGmzVJWZ2moo3sb8RGyj/AA1/7qmkbI25JuB0WUdmYyWrkuOH0furhEW9dlnOFYe99OC1hIJA1AbXUVjiThVZictKzxonxO0vc9lm39CpCy5nVrKbQJW+GSHW9VjOOfiMoPSsR5KfNVO+mJjtY9VhtVh5rGOBAuFlmY8wRTPfJLI0B5vq5/ksUl4h4HSvbC7xI3v8olczyk/VIJ9jKTTwmWRkL8KxGOdnlF9LlK2AYk2opmg2JtyKjmrlbWTNayzmvdqFuoWY5cifA1vT/C2y4TNOMSwZHVwtc0ONrc1aZIzGbgXHPluFezUNMY9Faq+QF128/RY7MnLMfrZH6pAPhFyPVY3W1GvT6DdZLiLvFaSDbbqsTxE6JCOQv0WcOTTU4LVO4ag7mfXoov4r1TG5YxkOc1odTuNjzO45KRa2TzbdL3UNcXq2NmXK/UdVwWA9QeyvbbhHmL15z9DKOFWMfvLJlA9vJlO2MtJ22VNm/G5cs4dVV8FMytZRxvq5onyaAWsGqw9SRa/TmrzkWCnwrI2FsZ5Q+jZIW/1W3KiL2ksyUmDcN8Sro61kOIzaaakY8EiUuIEoHQnwyefRc9KlL1ZKHOf8/cvaVzRjCNW5+FR32b7bbJx7477c78PR3HMQ/e2M19d4fhe9VEk/h6tWnU4utfra/NUS5dzK4Xqz5cEREAREQBERAEREAREQBERAEREAREQBERAEBsbouWC72g9SgN3/AGQ8SzDnjh7KxnjPZglU2lNW95kLo3AuDSHcg0DSAOQWw2caMtyZiUMovJNTvtq30ix2V+9gLh/g+BewxRY/h9EyHGczV1S/EKid5eZfAqZYY3Rh2zLMAadPPe/NXLG8vtxZ1VBIWspw0sJPLtZUV+o0mpLlntul1Kl1TUJ7RisfXwQDwQxieowRtNZoZSP0WZzvf/S2HwmrE9LE47G1itNMnZjOU83Ynh0T9MQq3McSeYB2W0WUMbbW0TbOGoHcKKy3fz3Oe2ktl42ZIUD/ADjewO6v+Gy+UHqDv6rFKOp1FvO1lf8ADJrea/l53XnKnxHrqT9plcU9mEbfmuklZo2Nz6hW1la2xNrnv6q04xijodJY42Bu6xtt6rVyzfnBeK6sEwLATbrusZxqopqWN3iMa4W3LuQWJ5s4m4flKkklqahheBq8PVuB3UE5v45txqmlNJK4s8F7w51/7LdClJ7nNUuoQJAzfnfAcMqZ4IZIo6g7mRvKP1Kv/DfHqDM2FMnM0tnO0CT4Q71AWkeN5kmxqscGTOMMZ1OB3Ljbe/dZ7w+z3XPlpi6pdFQQzMaYmusX36+g7qz/AAzUclV+P9SensbeZoxrD8vxuJJeQCNb3X0qOabPmE18wdUXnZqIaHHy7Hoow4xcRHyV1K2JrzT1FNrEurYnr91C82c66Crhk1mzgdIAtYHl+aK2lJZJlfqk9Jv5guY6GVjG0/hGMDctOwWbUWJsfEHMde3Oy+f2W+L1RgzpzFM9jXMGpr92hynHhh7RFDiz6bD8Ql91nk8gc7lrtcfYriq21SLbOulf0qmFwzaRmIGVmoHYDmFSzT62m2zu5WHYfmaGcsMUokB2IaeqvrMSZI077dCuTGDuzqWx4187ZYn2vdYliEhe697Ab7rI8QmHhvJcBcc1h1bVtdqF7kdTyW2mss01HsW/EpfDgeTzsbLW3jJjcc7GYdG8OmfMHOINuZ5Kas5483DaF8hcA8tsATsVrTDXw5m4mYXHUStjidVhzvE5AA/2XorZYWp8Lc8neScpKnHmTS/U2mwfBy7LdBSMGtraVg0nnbTuFqr7bOVMVw+gy3iZmEWCBzqIUly38exfr0cvgIF+ey3Uoa/CzVUTIqiEPnlENPCHgOlfbZjB8zvQbqAP2m8FZlXK+SMuYxCyjxKoqX4tDTAEuFOWeHdx5A6trBbrBuabkjX1dKklGD2fY+faIiuDywREQBERAEREAREQBERAEREAREQBERAEREAREQG2fsL+09S8Ms3YTkzOeJe55Ar6x76munfNKaC8TywRRtJa1r5dGo26lx5KfONvtFYFl/OzcIwjMWHVVBVRvqI6iGpZN5QT8T2Etadjsdz05r5oA2XJcT2/JclW2hVeWX9n1iraQ0adWNlnhLl7Lv8ANmw7cxfvrG6vEopmTXmLmTD5wSp94a55lkfGx0ti2xFuTuy094Z14mgnonWGk6mu/lB6qY8n4xLSne7HRDQ4sPQ9UuKKcVhcHHbXDVVyffc3mwbGo6gtF7ktGyyyiqi6M2O4/Ra7cP8AOYnghDpbkt0m/O4UwYJjQn0G922vz/NeRrQ3Z7q3q5ijOhL4kOoOIPcKM+KeaXYPg8szX+EyJ34j3Gxt6d1n0FZG+OzH3J+VQZ7Q001Fh8UO5M0pEji27WtAJ/utNGGqSTOi5q6YNxNbuIOc5MzY3VSzyGOJ9hFCXbnba6ooHe+YTD4YcJNLmBjASTtyNlX4Vw1xLPNRHURgMcxxMYHJ/qVndHwQxTLhZM6R8jT8Qj2+qvJTpQioo83St61WTlJERDDZMO8LwqR8j5HAkOI+Lt/8q95WilhzC2jkw2ZlPVPsXMYSWP7/AEU+5TyVQx+QRjchx8Ruqx/2pKw/IL2+HNHJHdwvfwxv+l09dyWDup9LaxMgPNOR6+roKYCkNQ+L+HEBsG/UqI8VyficE0njYfOA862tDSdFuX5dlvIcoVs73Ma9sd9y7mrLmPI0VFR+JNUSOcd+Q3WMKkoLB0VOm+s8tY+5pkMrVcVA/wAeJ7GO0vu5tr/l19FQ02K07JJoZmmF0e4mZzBtsthcx5VhqSyGmnqHvkeGxbDQCR1WG5l9nmrYwzMcXNkt4hbzJW2NdcTKqt0+UXmn2Llwx4pVeHPpY55vGpnWGodTyW0WEYsJ4IxrD2vbcEDYhaQUOV6/K2ONpJWCOESgCS9xuOi3Ey/SPosKoGveSBCPMNrG3NVlzCGzj3LSxnUWYz7F6xGoIc46vwxyBWG43jUNLHIQ4E6S78lc8ZxUQxuBcL/MSobzVmfxYqrwwBYbv5Cx5rTRhlnRc1NMcmKcT80SS0zg6zJBcgXNrdFAOZ8wS5dipMVpnx+LHO14ifzkAO4PofRZlmvFzUSthMhdHqsC48mjmoQ4iVxlxMU4ILIySLG+3RevtqajT3PB3NeTq6oPDXf5mxeF+3DhuVsxYPmLCMmRVeK4UC+lp8WcJKWKYjSZW6bODgCQCN1A/HHjnm32g8/4jm3N+JyV9fVP/DhvaGliGzYomcmtAAHcnc3JJUfotdKyoUa87mC980k93ws4WM4XL4Xc1XF5VuowjUx7FhbLPLe75b35fbC4QREXccQREQBERAEREAREQBERAEREAREQBERAEREAREQBERAXXLONT4Hikc8Pm1eR0ZNg8HoVLtPXS00xIIZK0X0X53HJQas0ydiz5HtjkLpCDexNyfRHusMlNo2UyLjpdR0s0EvhSsNpY+rvUKf8tZgLaaJutj3OYAO9+y04yvjQpcWpwJAGSuuJCfg9CpiylnR1NP4UzhpJJBvyt6rz11QxLKPV2N0nHEjarKWKvdViGZwu4eIfT0WNca66mr30dC1glxKZzWxQAdb/APVysfyjnuCPC56uV7fwmcxz9FHE+fnY/nKKtk1fgvAaXu2G/MKrjBuTwuC7qVYxit+Se8qZShwmjDn07IZeobbbvb7rJmYfHMzwyA4HqeYWKYFmduIweG+VrnNNgb/2WUUVR4wYW30jb1XPLKZYUpRaOkuU6SJ7ZWsDABuW7fp3VfRwRCPS2cXaLAXsR6KuipzMdZBcdO1+YUeZ5ypjjJDU0Mr4nEk3jOw7Cy2U6nbJnNPlIzyCAB/nnbH2de91aMx+FIGxeOHhmxIPJQuKXNlJikdLLVVQD4zfe/nWZ5QybjTrVGJ1L5W89BPxDsVulU0o1LMnwXVmXaVkbQY7Ma7xBq2N+4VRURtMbo9iLWAPKy74lHPTD8SNz2jqO3TZY/iOLeFDIZnNYxos/V19QVzOTkzY8JbmKZxy3SxVtHWuc1tPDM10sYHYqTK7EIH0YMD2ujMQcCDsRZRHnbM1HUZYqImVDCWbFxO9u6xnInEptdg8lG9zWVUcOj4r7XNit6hJx1eCtdWCq6U+TIM6ZxLIaqBr9L9BG43Kh3OuOPldHDTP0s0AvIPlk9FW54xlr8bms/TL4WguvtqUXZozLNIXw+I0usGktHUKytKOWmimv7nSmmec9VFJVOmkI0h+5c7SAOu/dRDnXFKLGczV1Vh0ElPRPfaJkrw9+kbXcRsSfRXXNWNyU591jcSC27ieVz2Kw5ek2SSR5JvLywiIoICIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIN0AAubKWOHmQg+kosQmrWxRVv4YY3dzH36qgyNwnnxTCXY5iwfS4dYiBo2kkPIPA/lB/MjspZ9m/hP/AMecX8oZNdK8x4pXgVUoGksiG7jYcjay6VaqtQdRTcWn4ymsPKznnOOx00K1Kk5KpDVlbb4w8rfjfbO2xHeN4dUZcxJ1NO0x6H2cedrdfur1l7Nboqun8R2qz7EnkR0Us8Yci/unMOYsr4hFoqsLrJKYT6dyGnyu+4stfJ8NqMIrvClDmsDt3PG1gqaE4146Z8nXVpStZqdPeJOdHmzw6adofpie13wnYHoLdlgUWMGnr3vnmexrT4jgHbOd2+ixmnx15jLDqZFe1r9e67y1JqHgEkEcwfmHPdRToKLZFW6c0mbLcLeJENf4FM9zjI1p1Sa7Bvo0d/VbCZTq4XUuxDDIdVg/V+q+eOD4hU0EkcwLmEc9JsGj1U/8JOINYzEfdYy4UsUWpoduXnqd+nVVV1aOGZR4L/p1/rxGXJufh1YHts19iBbkveaZ743iWo1C9mhrdj9VEeV85SStc+oeyURjWDq3A9VIdHjENZIwl+hz7BvYqpUGj1Ma0X3Lg3CoJJPEfp13tbT/AJVRURikgNpQAOlknkha/wAE1AY8tJaD2HOyjrGc6h89THHOx+l2lmvv1H2WTTYdSHYrMw4lB5nGZ1twXHYHuFr3nzPsFFXGOmro5YAHNMLd7FXDiDxCe9krx5o/EMM8XLQRycCtYMfxYvxipu97BI8v33v63Xfa2zm8s891C9UFhGTY9nF1S9+5FKRZ4ZsSO4WP5YzC+DFKySCoLA9o/EtuQsaqZJzPJC6x1M1NtvdUtFXnDIXnbU421HmD3V96KUNKPJK4bqKbZmeY8wHwmREtaWtNjq8zvUqx4DlzEc643RYVQQPqq2ulFPTQsHme83sB67FUmD4ZVZkxH4XOaTz7Bbj+xNw+pj7RmR5JYmvNJK+pBtsHtGx/UrWpxotQXLN7pTuU6r4Ropm7I9RhlbIBrEcDnRStkuXxuabEEfVYdLC+B5a8WK3p9uzhrDw89pXN2HRRGHDccLcUhDfKB4u7tJ7Aha9Zz4aSY3gVJV4NTUYqIGG9JTXM8gHxueT620jtdeunRtp2muKxNPOc7NY4+ueMfPL4KfMlL5EMIuXsMbi1wLXA2IPMFcKiNgREQBERAEREAREQBERAEREAREQBERAEREAREQBF3hhkqJAyKN0jzyawXJ+yuOAYBLj2JMomSx08jwS10xs3bc3PTa/NZqEmspEZLWpN4XcOqTEWx45mC7MJBPgRgg+O8dHW5AHp1t2WOUWR6yomDoY/HiLrNNwNQ/mF+lt1n+E0DMt4aaOKV0rS/W5rj5dVrXsrf8u9LPrS38Lf+/H835NMpSkvZsZRX47NNIJ5ZD4NO0x01O3ZrRawLh1NuXZbG/syMuux/wBo6vxaWIvbhGEyyCTo18mw/stTpJnuFufdb6/skmQHH+JRNvePCpgCeenWdkryxS0rhGceSv8AbX4WPwzjHWYq1lqTG6dtQ0gbGQfGP7LVXFsmt8YtfE14PRwGm3dfXfj5wnbxTyJJHTwCXGsN1T0Z6vtzZ9188MdynpqHMnp3wTscWyQyts5jhzBB5L57eqdvW1r4Zfue6sNF3bqP/KPP+DUfOORp8PlklpWeJECdx8v09FhcdRK2Vpdd1rhwctv8VytE+NzTFqabggDkoczdwsFpZqeEQPdfS0my6La+T9syvvOmNe+n+hHzMScx8zWbsljBOrsP7LJssZ2kpaoyR3hc+LRY8jta4WA4jh9fg1Y6nnjcwkaC1/zBIsSkDXQusNI/DI+UdldPTUR51aqUvDRsfgHE5zHMjbzewRtffcgcyVLOA8VYaKltNOxz4nNtvyaef3WlOEZmlp3NcdWsWbc8gOlllcOZvepGnUQY7eYnYuVZUtMv2l3Q6k4p6zaXM3FfwXCWmrXuib5NjdzQeYWBYrnmSaes92JZ4kpGp7viuQdu1rKDH5zqX6o3P/CDtJI6nuqCbNsz4poWSkkEOa8m+45rGNm+6Nk+p+DMM7ZxlrH17WkmbxLSBp2+qjyPETNKXSuD9Moc2/RtrEH7Kgq8Xkmc67yGyu1fdWyNr9Is8anSEH1HdWlKnGksIoq1WVaWqRcavECySTw3EhslmP6gdAvXBcFqcfrr2Low7d1tlWZXyNWYxJ57iJz7k9xfop+yNw7bTsjaIdm2sLWC5bm6jSWFyd9nYzryTa2Kbh7kRlBAyV7bWHZbk+wdkx2L8X67Gmx3pMEo3Nc8jbxJNgP0Kg92Cigoh5SdrBreZPYL6MeyzwnZwl4TUsdRGBi+Jn36ueRvrcPKz7D+6q7NO5r+o+xe9Q02lt6ceXsauftWsgQ1eRcq52ijaKvD8QOHzSBvmdFJuAT2Fl8+MCxeoipBLSyNFZCRYP8Ahkb/AClfUj9pqWj2WK4O64rTuH/qXyXw+pMMpG1j0C97avNPD4PFSLbxPynSY7Rz5lpBDh9UXhs9IdvFceZb/V1PQ7nmohkjdE8se0tcOYOynZ0kdS4RVAa8B2ppcAQCO46qzY7kuKqoqgUoZLLPN4pleBqA6xg9G33vz6cltqWVGcKcaDett6staV4xtn6vP2MdTTeSIEWf1HDOOekZLRVThIIXTTCdulsen4mjqTsSO/1WETUE0A1FhLN7OA/6suGtY16LftykstrdJZws+MvzgzTzsU6Ii4DIIiIAiIgCIiAIiIAiIgCIiAIqqiwypxBsr4IXyRwgOlkDTpjaTbU49BfqVIuUeFFLU0FfU49UVFJJE0NhgjAaXP5gm/NhBFnDutlODqSUI9yHsRgATy3WUZUya3H9M09T4NKJWxSubYOZq5OAPxjY3DdxsrrT5Ja2QGeRumNxs1nQdLnqsxwyOnwilIhjY1z+pF7W7dlbzsaVNuLnn6IwUmyz4JkaDCq73iSZzWRvvGL2JHS5V4qxRw1NRU+DEaiZxL36AA6/MWH9l51FW+QXve35KghvU1dyRoZub91YVbqdXEeEuEuxglguLKh7IhtYuFhYWDW9gvGR5fy7XN0kJ18wRa115Oc43H6hcmTI9orvd8W1uQW8X7KOpMHFLPdODp8TDIJC3vZ7t1pDh5tILt1E7XK3O/ZgVQpvaCxmk5CtwV4t/wCS5/ytNZZpsyjyfVuC7CHAbbclBntI+z0zPlJJmLL8LWY/C280DRYVjB//AGP1U80YJiaCLWCqGxaSSL79FQVaUK0HCa2Z2W9xUtqiqU3uj5X1GBPikkimicyRjtMkb2lrmOHRw6FWDFspx1DHHwxJvvcbr6RcU+AOAcSWyVYj/deN28tfA22s9pG/MP1WoHEHhXjnDysfT4vRuZFe0VZGLwyjpZ3Q+hXjbqzq2j1LePn/AGfQbPqFC+WniXj/AF5NS85cP4atrmPpWyNNxa29/QqGMzcL6yh1y08TjG0H8L57/wClufiuFMOz2Xdz3WM1mVmVLnDRbVzepoXs6Rruum06/Y0hqqeSIBr2PilaNL2kWXSjxGaCSR7zoDWEMuNr91tzjfCSgxNkrXwNd4gtuLELAMT9nmSo81NZzr2a1wtZXlPqVKS92x5it0evB4hua/TVReNOos2vf+rqvOF4gZck3INgpqqPZ9rxIdALWciXC9yusXAh7xFrmcbbBtvhC6Px1Hszl/LLnjSRDQ4fPiRbHEzWXutot8PYqS8rcKXSPaZAJHC1rt781J+VOEtLhejVGTd2rcbn/Sl3AcnRRsZaENaOwVbcdRztTLmz6P8A8qhgeTuGrKdsV4xZvIEclKVBgcOFwAkC9leWUkGGwcg0jrZTDwf9mjE+JjoMVzGybCstF2ptPbTPWDtb5WHv1VRCFW7npj/8PRTdCxp65vCLb7LvBqXiRm2HM2KUpbljCZdUPiN8tZOOVu7W87reCsdZugbAdkwbBaPL+G02H4dTR0dFTMEcMEQs1jR0CTt139DzXsba3jbU1BHz69u5XlVzfHZGlX7UrExS+zvRUp3FXjdPHbuAHL5S6tEtwAP9L6YftZ8TEGR8gYUD/wB4xKWpc3uGW/2vmjKwg3Isf7L0duv6SK2R5SPu8lp3uqqKcsYWOOx5m6opC5hNvpfouASTz3PIro4MCvZiTmOLJQHgc79VzR4fhUtZDNLRxVUTJWyvpZiQyW2+lxbvZW6VjnMDr2c3mlPMTbp3Wcak4pxT2fJlFuLzEtmM5IOK4jW1kzmxMdrlYIWAF9vhjFvK09LnbZYBVYPPT32LiObbWIUwU9a+EkE+QjkVxUYZh+LgiWPw5eQc3uuqjCyr1JO8TzLunw/OOH/MGMpS209iEi0tJBBBG26KTs0ZNocPy9TtpKOSavMr31NY92ryfIGAbAWvcG5Jso0ljLJXN0ubY/C4bhUV1aehiUZJpt48/dfz9c4zUsnRERVxmEREAREQDmrnTZaxOqo5auOimNLELvm0HQ36lSG7J2Gy4Th7fdvc6+LxPHqQ7yytNtA0dxv5r73VxpJXYdgNRg8Mrn01Q5slRYWbK9t7G3pc2+q9JTsLWms15uTzwtk15y/Pbb6mlyk+CIaegkqJC1oNx2F1VUuBT1TgGt62ueVlItPh9NTPLo4WtfzLrellUsYIxZrAzboFpVKgo4Ud99/54Jyz1y5RUeA01NUQvlgq/BdFURRWLJr35g8tuh67qpr8UmrGhrjoja0BrGnp9VRjmB+q7FvI3+y66ledXGp8LC+i4X2MUsBh5A8vRdpXXsCV1JsCL7/3XhNKI2uJ3XMZHlVzaGW/RVFNF7vTAHZ7hc7dSqOhjNbUXP8ACZvvyJVzc3zWvf6KAdXgE2DvKF5Obfra69tgLHfbnZebbF4FrW6oCppWWIsSL8rrYL2Os6Dh97R2ScSdLogqKk4fUF2w0SgNWv0FmkEm3+FkOBV0mHV1JVQPc2almZOx3XU03Flk46ouPklcn6EICBqb2O30VQN7LEeF2aYM88PsvZggcHR19DFKSDfzaQD+oWXAWXnjYckWVDimD0eNUMtHXU0dXSyCz4pmhzSFXriyhrPJKbTyjV/ij7JglM1bk97SCdTsLqnWA/8A1v6fQrXXF8mVeX6x9HiVFNhlYw7w1DLE/TuF9KSFYM15HwbO2Huo8aoIq6IjYvHnZ6tdzBVFc9Kp1PdS9r/t/wBHprPrlWjiFf3Lz3/7/m583JsL85u0W7gcivIYYxoG7dI3+/dbM8QfZcxLA/Fq8szOxajbc+5Tfx2DsD8/6KE6nBiJZIqiB8M8Zs+KRha5p9QvNVqFS3emosHsbe6o3UdVJ5/f9DA6yiiItpF/VU0GAeM+7WXv6WWcOy+1pJ0gL2psMIIbGzV6gXWhP5nS8GNUGW44CHOYC7ndZLguAVuOV8GG4RRy1tdMbMhhbc/U9h6qQ+G3BTE+I9bZknuOGQm09c5tx/5WDqf7LbPIfDPA+HWH+7YPSNje4fi1MnmmlPdzv8K3tOn1Lj3S2j+/0KO+6rStPZHefjx9SK+Ensv0GXZafFs0lmK4s2z46QbwQO9f5iO6n2OMRtDWiwGw7Aei7AWFlyvW0qMKEdFNYR4S4uat1PXVeTjkqeZl9hsF7klebwSPVbjlPmb+1oxVkubuHOGMd5oKOpqHC/8AMW2/stAKoaiNrE8wVud+0+rxXe0FQwg3FFhbIgOxduStMatzQ4joNjZXluv6SMJclvcHBxBNyfyXdkNxcm1kkaHk+nbqu0b7AWGm3VbTEPsy5FwqOa1M8OHwu5ehVbIWyBxJ0ttuVb5JDVaWRn8MblxChgqo5dbQNuSqI3ltyNyqWANjIB3sbXPVVA3JuhB7++OYwtvcduix/FcApcTkdJbw3uFjYbE91dyBZdXM3HLdZJuO5JiFdkx8gY6OVpcNi2231Vorsrz0lgAXn5nDkPspAvpdfqj9L2kEauhuts6iqylKtFScu/6f6wYpY4Innp3QSaCCT9Oa6uiew2c0tPqFJNZgtLVNLXR6L8yzYhV2XIX4HU1bqR8L46umfTSsqIw42I8rmn5XtO4K4JWtKWpptPKwuyXf57GakyJkWYYjw/rIXF0REzSbkjnZFhHp1WfwtfdpE60jNHOMjruJJ9V102JO/wB1ydyBe6cu/wBF2GJw1v8A0F2aLEk9Vxe24O655jlv0UAEXG65sG2HK/JNVt/suLjkefQqQCdz69VS1MXiNA5AqocDuOoXQt3O4PUqAW+GolwxxGgvhduR691dKSshqGamG5Pfv9F4SNbJFuPqVa56YxSF0R0O9FHBBfXusSb7HmutONZ2AO91bKGvlqJGwyRueBze3kFeCLAAWAB2CJ5JPRh1SDnYevNXGlqLPabF297X5q2xE3PMBVEc+iwaN+5Wafcg+wf7ObO/7+4GR4LNMJp8JmLYyDzidy/LdbYhfLr9mfnibL2fqnCKokYfjEemGRxs0TD5fuvqKCqOstNRo3s5REWkgLggIur3houb29AgDmg7nmsHzvkLLmePJXU8JqwdPvcMrWTM9L33+hWtvtn+3Fh/CqPEsj5LrGVee309p6mPzR4YHbDfkZew6L5WV+dM3VE81aM5442oDy6qc7EHtIeTckb7rf8Ag/Xh71s/Jsp1p0ZKcHhn2bqPZlwSnL3yZmkDSbtEgjFh6kuXjlrgNgWI4pLBHmqmxCngI8aloHsdL9HEElq+KmI4/mzF4nCszRi9ZG22llRiL3XB9LrwyXm3NuQsXhxjLuP4hguIsN/eaOqLXE/1b7j0K5fyW3W+n9/9lj+b3jWHU/sv9H6L8Jwmkwaggo6KBlNTQt0siYLAD/arQvmp7Mf7UOr8ajwLjBBG2MlsLMy0bNOk7AGeMch/UL819HcHxqhx/DabEMOqoq2hqYxLDUQPDmSNPIghbpU5U9mirb1PLK9cICuVgQdbLgi5C7XuvKaTw43OPQE/ogPjL7eeY3Zj9ojH5Ht8lM7wIyf5QtZZyHO7O5m6l/2nc0U+bONmaayjkElIyqfTMd0JadyoaneTKfmFua9BTWKcUa5cnRhJv8t+Sp6t/uLC7QX35aVVsuQRbpsVzoBcL8rcu6yw2iCyRufVkmQ6W3vpbyCr49DWBovdd6jDY3kvjPhn05LxeyWADxG+XmHDcLFLAPZoBuN+e69dXw7k/RUjKkEbFerJrg77c1OwPc7g7bro5pt9eq7Cx63B/JHA6elud0IPFzeY/svMDfcL2f5r35rysbXG6gkFgcLE29QvMamOBI36rvq2QObdAVlNWui5HnzRUYdd3ZFOWQVRB1arbDndcWsLnmV3Jvz6oRy9FLJOhbfc/ogB7f8Auu3MlLea5UA6A7hdidxvf0XXe+4sF5yyhm/LtZQD0c617b+i8ZZmtAtYFUctUX3AN3E2AHNVMOHOns+c2H/htO5CjIPN8rpDohZrJ/lXtBhfiPDp3ar/ACt6fVV8cQhbpjboZzIb1XcWaP7LLT5B5CBkbCwNDWjo0Lho6W36LtIevMrpbfcfqpIO4dewve67xHS/ccl4g78tl3YSXOJFyhJt/wCyVTNxPJGMSUkrmYrguJMqmFp8zWv5EfkV9U+GmbhnTKVDiD9qksDahnZ4G5+6+RvsI5gZT8VK/AJX/hY5hr42NPLxIxdv33K+lnBGvdhkb4f/AKQeYpW9t9iqq6XvybVwicQi4adh1CE7b8lxAErS/wBu32uce4ZZercucOg2THywsr8VDdfuLCNxGPmk9fl+q2pzrjU9JQSUtE7TVyttrHOMHr9VrJmfgdDWVZxeop/GjDvxy8argncnv6qU8PIPjbiGYsQrcRfNUVctRUSSGV80r9T5Xk3c5zjuSSqvD/8AnSTYSvPmkdITpZ9PVbE+3D7NtLwxraTOGXqcwZexGcwTUzB5aae17t/pdf8AO61qwCe9QxkjXOF/KxvU+vormnNTSaNb5MibQUwjAEbWgg6XP3NuqqaPB6epjAMIDG7+Je2pdqhhswPAJJ5DqeyuD3toaHXIQ+QgWjb0PouxRRizHcZrGYVUGSBoBbsQ/c2+nULaT2FPbYx3g1mWDLGOeNi+SMTn0+7s80mHvJ/ixf0/zN+pWnOL10lbXvc52t9/KRyI7LfHgx7IM+WOGGF5jroHHMGJQiq0Ef8Ad4nC7Gj1I3K4LicVFpmcfJ9YcLxOlxigp62iqGVVLPGJIpozdr2nkQqvotVPZSznX5Vp2ZYxiR37ue4+6vkP8B5+X/yn+62qabjsqgzBvdRL7UvFhnBrgnmPMTHD373d1NQs6uneCGfkpacbArST9oVWT5qp8Ey1TXfDTyOqJmg7XA3J+iyisslLLPljUyvlYXSkvkN3SPdzc4kkk/mrPKTrO/2V1r3tJlcPgc91iPqrQ4HWLi5uvQNYWxpfJ7R3Aue21v7Ls3dg787LzbfkvQ7NNiLWsFKfcHLfp+a5tz1fUBebHkuufpfsvS4FvqpIKSopY5C4kaZCebVSVEElIC6+qPv2V0PI2591T17mCikJO52AWLSJKGCrJd9FWtkDgLfdWSP+Jt/8q7UwL2N6LBA9y0E7LycCB3C97bXtv/deT28wdrfosmDxsO32XAAJK7uaLW+ZdCCefexUAafNfkUXALiNjt1JRAVrthbmgNr3/wDlNRtfkey63AHW45FTkHa5DexXG/IfW6Dc7hc337j0TAOHctxse6t9bcDynmL3Vwdbf9D2VPVRhw252UMFqwyoFNiET3m4DrE9lkxLXXe29/VYnVQmKQ9O1lkNBKaqmY5zr3FnJHnBBVawN73XDiN+V+iBum4G9t/quhFn/VbADcncLztqtfrtfsu0lwdr7c10+Mm429FrZJyBc+oXdjgHCxPY7rrpsdtglgD2ugJO9nrMoyfxlyZir3+HFDicTJH/ANDjYr7AZZp24NnyqonH/l6sa225E2v/AJXw/o6l9K9tRGbSxObK3uC1wK+0mAZjjzDlXIea4XB3vtFTyucO5bY/2XDdr4WjOPBsFhcxfT+G/wCOPyn6dF2xGs9zpnPaNUh2aPVdqWJhDZmnd7B9F6SU7JXAuGq3JVpkWDD8EfVF09Ubufvuqutw6GKkka6Nroy0hzSNiFeALDlYKixS3uz9vlJ/RAau8YeElBxgydmThxOGsFdE6TDqkj+FM27o/wAnfovi1XYPV5OzTWYViMTqauoah9NURkG7XtNj/a/3X3xwLDXVWY21TvL4Id5hzC+U37S3IVPkn2lqzEKKMCHHqSPEi1uwEhJDh/6Quy3lh6SJLYhOZoeKJ7CRG7t5R+qoM318tBUtiikbHdvMEAgdrFXTD7y0WGPeWyBx3Y3osTzlVmbF3t2e21tHVtuquJPETUSh7J3BGo458XsLw3RowulkbW4hKBcNhY4H9SAPuvtzQ5cpsSo44GQtZAIwxkYHwsAsB9gtOv2enBscOOCEWaq2LTima5PFa5w8zaVmzB9HbH7LeXKMQdA1/oqOvPVLHg2rZEc5l4X/ALqYaumZYDfyjks74c5pfjeGCmqT/wA7TANcT87ehWWzwMqIXRyNDmuFiCsbwvJownGzV079Me+3+FzkmTnl6rRP2nK0T5lzlWOdYYXhE7wexIAut7CNl85PatxI0OV+LtdqsZPDom3P8xNwPyW+isySMlsfOZzyYox6X/VURsZOR59FVTght+YG1wqWMEuBIIV4zQd2CxLj05ru4kg2+qNFrtJNrXsu1if9+inGQdL2Pm7ckLt9rn6IW3BHP1XVp3IUEHcF1zfYKgxeQ+FGzSBffbmrgNmjcWO1irPi0l6i1rWG4CiT2JKemj1P3b16q7QNDY7c1Q0rDpBI2Vexukgg7HmCsUD2b5iLXsurgdOkCx6o06QLLsfm2ussEHm9gDN+Y6LykYB0t1VQ3do++3dcObqAuExncFD8JIReskJvcD7osST3dsbX3K4N9iiKQB15LsPK0m2x2REewORuAOfqujhfY8yiI+QW7EoBpuDuu2AyfHFz6hEWHcF2sfK43/0uXAtF739e6ItieQeUhvsR9F1+huiKHsDkjSNt7c1yOV7WCIoIKmlcNYA8x5br6d+x/nYZo9mHB6WR5dU4JVSULvRrSNP+URaa6Uqe5shybx5Qrv3hl2il5kxgFXoIipTIFW7F7uiLR1FkRAWLCsMZSidxb8QK+WP7WSfCariXkimgrCcaiw1/vNORZsUZJ0OJ7k32RF0UPjD4NS8GkFBTUUcgfFLT3e53xWHoFjwpocbzfRxy1jKeCrqooXVMg+Br3gEkfdEVvN4ikaVyffCXL9LlLLmWsBonMfRYbh0FLC6MWa5rWW1D6qQ8pNth0e3REVCzcX2+9ksiKAdJjoieezSV8pPbUzQ2PKWNULXfiYljzbju2Mm/90Rddt/5EHwzSapNwQBsNlTABpFybHsiK4fk0no+4eBY7Dqubi4CIj2ZILSCW2Nl5Flz2tuQiKM7kHcyC/Ii36Kxzu8ape4G41c0RRLnBJX07AAATYcwVUkkbnof0REW6AadyNgV6agWixGyIsyDoHaCb9V2tc77XKIsSQ5liCRt+qIinGdzHJ//2Q==" alt="Shabin T. R" class="w-full h-full object-cover rounded-full bg-slate-900 border-2 border-slate-900" />
+        </div>
+        <div class="absolute bottom-1 right-1 bg-emerald-500 w-5 h-5 rounded-full border-2 border-slate-900 flex items-center justify-center text-[10px] text-white" title="Active & Available">
+          <i class="fa-solid fa-check"></i>
+        </div>
+      </div>
+
+      <!-- Identity Details -->
+      <h1 class="text-2xl font-extrabold tracking-tight text-white" data-i18n="name">
+        Shabin T. R
+      </h1>
+      
+      <p class="text-sm font-semibold text-cyan-400 mt-1" data-i18n="title">
+        IT Support & Office Administration
+      </p>
+
+      <p class="text-xs text-slate-400 mt-1 font-medium flex items-center justify-center space-x-1">
+        <i class="fa-solid fa-location-dot text-[11px] text-rose-500 mr-1"></i>
+        <span data-i18n="location">Nedumangad, Trivandrum, Kerala, India</span>
+      </p>
+
+      <p class="text-[11px] text-slate-400 mt-0.5" data-i18n="company">
+        12+ Years Experience • UAE & India Track Record
+      </p>
+
+      <!-- Primary Action Buttons (vCard & Share) -->
+      <div class="grid grid-cols-2 gap-3 mt-5">
+        <button onclick="downloadVCard()" class="w-full py-3 px-4 rounded-xl font-bold text-xs tracking-wide uppercase transition-all duration-200 flex items-center justify-center space-x-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 active:scale-[0.98]">
+          <i class="fa-solid fa-address-card text-sm"></i>
+          <span data-i18n="btn_save_contact">Save Contact</span>
+        </button>
+
+        <button onclick="openShareModal()" class="w-full py-3 px-4 rounded-xl font-bold text-xs tracking-wide uppercase transition-all duration-200 flex items-center justify-center space-x-2 border bg-slate-800/90 text-slate-200 border-slate-700 hover:bg-slate-700 active:scale-[0.98]">
+          <i class="fa-solid fa-share-nodes text-sm text-cyan-500"></i>
+          <span data-i18n="btn_share">Share Card</span>
+        </button>
+      </div>
+
+      <!-- 1-Tap Quick Action Floating Bar -->
+      <div class="grid grid-cols-4 gap-2 mt-4 pt-3 border-t border-slate-800/80">
+        <a href="tel:+916235712497" class="flex flex-col items-center justify-center p-2.5 rounded-xl transition-all bg-slate-800/60 hover:bg-emerald-600/20 text-slate-300 hover:text-emerald-400 border border-slate-700/50 active:scale-95" title="Call">
+          <i class="fa-solid fa-phone text-base text-emerald-500 mb-1"></i>
+          <span class="text-[10px] font-semibold" data-i18n="quick_call">Call</span>
+        </a>
+
+        <a href="https://wa.me/916235712497?text=Hello%20Shabin,%20I%20contacted%20you%20through%20your%20Digital%20Card." target="_blank" class="flex flex-col items-center justify-center p-2.5 rounded-xl transition-all bg-slate-800/60 hover:bg-emerald-600/20 text-slate-300 hover:text-emerald-400 border border-slate-700/50 active:scale-95" title="WhatsApp">
+          <i class="fa-brands fa-whatsapp text-lg text-emerald-400 mb-0.5"></i>
+          <span class="text-[10px] font-semibold" data-i18n="quick_whatsapp">WhatsApp</span>
+        </a>
+
+        <a href="mailto:shabinthaj142@gmail.com?subject=Inquiry%20via%20Digital%20Card" class="flex flex-col items-center justify-center p-2.5 rounded-xl transition-all bg-slate-800/60 hover:bg-cyan-600/20 text-slate-300 hover:text-cyan-400 border border-slate-700/50 active:scale-95" title="Email">
+          <i class="fa-solid fa-envelope text-base text-cyan-400 mb-1"></i>
+          <span class="text-[10px] font-semibold" data-i18n="quick_email">Email</span>
+        </a>
+
+        <a href="https://maps.google.com/?q=Nedumangad,+Trivandrum,+Kerala" target="_blank" class="flex flex-col items-center justify-center p-2.5 rounded-xl transition-all bg-slate-800/60 hover:bg-rose-600/20 text-slate-300 hover:text-rose-400 border border-slate-700/50 active:scale-95" title="Directions">
+          <i class="fa-solid fa-map-location-dot text-base text-rose-400 mb-1"></i>
+          <span class="text-[10px] font-semibold" data-i18n="quick_directions">Directions</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Interactive Navigation Tabs Header -->
+    <nav class="sticky top-0 z-20 px-3 py-2 border-y border-slate-800/90 bg-[#0d1527]/95 glass-nav">
+      <div class="grid grid-cols-4 gap-1 p-1 rounded-xl bg-slate-900/90 border border-slate-800 text-xs">
+        <button onclick="switchTab('profile')" id="tab-btn-profile" class="tab-btn py-2 px-1 rounded-lg text-center transition-all duration-200 flex flex-col items-center justify-center bg-cyan-500 text-slate-950 font-semibold shadow-lg shadow-cyan-500/30">
+          <i class="fa-solid fa-user text-xs mb-0.5"></i>
+          <span data-i18n="tab_profile">Profile</span>
+        </button>
+
+        <button onclick="switchTab('services')" id="tab-btn-services" class="tab-btn py-2 px-1 rounded-lg text-center transition-all duration-200 flex flex-col items-center justify-center text-slate-400 hover:text-slate-200 hover:bg-slate-800/50">
+          <i class="fa-solid fa-screwdriver-wrench text-xs mb-0.5"></i>
+          <span data-i18n="tab_services">Services</span>
+        </button>
+
+        <button onclick="switchTab('skills')" id="tab-btn-skills" class="tab-btn py-2 px-1 rounded-lg text-center transition-all duration-200 flex flex-col items-center justify-center text-slate-400 hover:text-slate-200 hover:bg-slate-800/50">
+          <i class="fa-solid fa-layer-group text-xs mb-0.5"></i>
+          <span data-i18n="tab_skills">Skills</span>
+        </button>
+
+        <button onclick="switchTab('contact')" id="tab-btn-contact" class="tab-btn py-2 px-1 rounded-lg text-center transition-all duration-200 flex flex-col items-center justify-center text-slate-400 hover:text-slate-200 hover:bg-slate-800/50">
+          <i class="fa-solid fa-envelope-open-text text-xs mb-0.5"></i>
+          <span data-i18n="tab_contact">Contact</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Tab Contents Container -->
+    <div class="px-5 py-5 flex-1">
+
+      <!-- ================= TAB 1: PROFILE ================= -->
+      <section id="tab-pane-profile" class="tab-pane space-y-5">
+        
+        <!-- About / Summary -->
+        <div class="p-4 rounded-2xl bg-[#111c35]/60 border border-slate-700/40">
+          <div class="flex items-center space-x-2 mb-2">
+            <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+            <h2 class="text-xs font-bold uppercase tracking-wider text-cyan-400" data-i18n="about_heading">Professional Summary</h2>
+          </div>
+          <p class="text-xs leading-relaxed text-slate-300" data-i18n="about_text">
+            Detail-oriented IT Support & Office Administration Professional with over 12 years of hands-on experience in technical troubleshooting, network setup, system maintenance, commercial reprographic operations, and office workflow coordination across UAE and India.
+          </p>
+        </div>
+
+        <!-- Key Metrics Grid -->
+        <div class="grid grid-cols-2 gap-2.5">
+          <div class="p-3 rounded-xl bg-[#111c35]/60 border border-slate-700/40 text-center">
+            <div class="text-base font-extrabold text-cyan-400" data-i18n="stat_exp">12+ Years</div>
+            <div class="text-[10px] text-slate-400 font-medium mt-0.5" data-i18n="stat_exp_lbl">Experience</div>
+          </div>
+          <div class="p-3 rounded-xl bg-[#111c35]/60 border border-slate-700/40 text-center">
+            <div class="text-base font-extrabold text-emerald-400" data-i18n="stat_orgs">5+ Firms</div>
+            <div class="text-[10px] text-slate-400 font-medium mt-0.5" data-i18n="stat_orgs_lbl">UAE & India</div>
+          </div>
+          <div class="p-3 rounded-xl bg-[#111c35]/60 border border-slate-700/40 text-center">
+            <div class="text-base font-extrabold text-indigo-400" data-i18n="stat_skills">IT & Repro</div>
+            <div class="text-[10px] text-slate-400 font-medium mt-0.5" data-i18n="stat_skills_lbl">Dual Expertise</div>
+          </div>
+          <div class="p-3 rounded-xl bg-[#111c35]/60 border border-slate-700/40 text-center">
+            <div class="text-base font-extrabold text-amber-400" data-i18n="stat_support">24/7</div>
+            <div class="text-[10px] text-slate-400 font-medium mt-0.5" data-i18n="stat_support_lbl">Support Ready</div>
+          </div>
+        </div>
+
+        <!-- Career Milestones Timeline -->
+        <div class="p-4 rounded-2xl bg-[#111c35]/60 border border-slate-700/40">
+          <div class="flex items-center space-x-2 mb-3">
+            <i class="fa-solid fa-briefcase text-xs text-cyan-400"></i>
+            <h2 class="text-xs font-bold uppercase tracking-wider text-cyan-400" data-i18n="career_heading">Career Milestones</h2>
+          </div>
+
+          <div class="relative pl-4 space-y-4 before:content-[''] before:absolute before:left-1 before:top-2 before:bottom-2 before:w-[2px] before:bg-slate-700">
+            
+            <!-- Job 1 -->
+            <div class="relative">
+              <span class="absolute -left-[19px] top-1 w-2.5 h-2.5 rounded-full bg-cyan-400 border-2 border-slate-900"></span>
+              <h3 class="text-xs font-bold text-slate-100" data-i18n="exp1_role">Machine Operator</h3>
+              <p class="text-[11px] text-cyan-400 font-medium" data-i18n="exp1_co">Al Deera Printing • Abu Dhabi, UAE (2025–Present)</p>
+              <p class="text-[10px] text-slate-400 mt-0.5" data-i18n="exp1_desc">Commercial printing machines, preventive maintenance, workflow management & calibration.</p>
+            </div>
+
+            <!-- Job 2 -->
+            <div class="relative">
+              <span class="absolute -left-[19px] top-1 w-2.5 h-2.5 rounded-full bg-blue-500 border-2 border-slate-900"></span>
+              <h3 class="text-xs font-bold text-slate-100" data-i18n="exp2_role">Computer Technician & Reprographic Operator</h3>
+              <p class="text-[11px] text-cyan-400 font-medium" data-i18n="exp2_co">Global Digital Copy Centre • Abu Dhabi, UAE (2017–2025)</p>
+              <p class="text-[10px] text-slate-400 mt-0.5" data-i18n="exp2_desc">High-volume digital printing, OS installation, hardware maintenance, network troubleshooting & staff training.</p>
+            </div>
+
+            <!-- Job 3 -->
+            <div class="relative">
+              <span class="absolute -left-[19px] top-1 w-2.5 h-2.5 rounded-full bg-indigo-500 border-2 border-slate-900"></span>
+              <h3 class="text-xs font-bold text-slate-100" data-i18n="exp3_role">Computer & Network Technician</h3>
+              <p class="text-[11px] text-cyan-400 font-medium" data-i18n="exp3_co">Freeling • India (2015–2016)</p>
+              <p class="text-[10px] text-slate-400 mt-0.5" data-i18n="exp3_desc">LAN setup, network troubleshooting, hardware/software upgrades, on-site/remote support.</p>
+            </div>
+
+            <!-- Job 4 -->
+            <div class="relative">
+              <span class="absolute -left-[19px] top-1 w-2.5 h-2.5 rounded-full bg-emerald-500 border-2 border-slate-900"></span>
+              <h3 class="text-xs font-bold text-slate-100" data-i18n="exp4_role">System Service Engineer</h3>
+              <p class="text-[11px] text-cyan-400 font-medium" data-i18n="exp4_co">Micro Medi Tech • Trivandrum (2013–2015)</p>
+              <p class="text-[10px] text-slate-400 mt-0.5" data-i18n="exp4_desc">Hardware/software servicing, system diagnostics, network configurations, performance optimization.</p>
+            </div>
+
+            <!-- Job 5 -->
+            <div class="relative">
+              <span class="absolute -left-[19px] top-1 w-2.5 h-2.5 rounded-full bg-slate-500 border-2 border-slate-900"></span>
+              <h3 class="text-xs font-bold text-slate-100" data-i18n="exp5_role">Airport Ground Staff</h3>
+              <p class="text-[11px] text-cyan-400 font-medium" data-i18n="exp5_co">Indira Gandhi International Airport • Delhi (2012–2013)</p>
+              <p class="text-[10px] text-slate-400 mt-0.5" data-i18n="exp5_desc">Ground support, ticketing/baggage coordination, passenger assistance & safety operations.</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Languages & Location Quick Tag -->
+        <div class="p-3.5 rounded-xl bg-[#111c35]/60 border border-slate-700/40 flex items-center justify-between text-xs">
+          <div>
+            <span class="font-semibold text-[11px] text-slate-400 block">Languages Spoken:</span>
+            <span class="font-bold text-xs text-slate-200">English • Malayalam • Arabic • Hindi • Tamil</span>
+          </div>
+          <i class="fa-solid fa-language text-lg text-cyan-400"></i>
+        </div>
+
+      </section>
+
+      <!-- ================= TAB 2: SERVICES ================= -->
+      <section id="tab-pane-services" class="tab-pane hidden space-y-3.5">
+        
+        <div class="mb-2">
+          <h2 class="text-sm font-bold text-slate-100" data-i18n="services_heading">Key Services & Expertise</h2>
+          <p class="text-xs text-slate-400" data-i18n="services_sub">End-to-end technical support and office infrastructure management.</p>
+        </div>
+
+        <!-- Service Card 1 -->
+        <div class="p-4 rounded-xl bg-[#111c35]/60 border border-slate-700/40 border transition-all hover:scale-[1.01]">
+          <div class="flex items-start space-x-3">
+            <div class="w-9 h-9 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center shrink-0">
+              <i class="fa-solid fa-laptop-medical text-cyan-400 text-sm"></i>
+            </div>
+            <div>
+              <h3 class="text-xs font-bold text-slate-100" data-i18n="srv1_title">IT Support & Help Desk</h3>
+              <p class="text-[11px] leading-relaxed text-slate-400 mt-1" data-i18n="srv1_desc">Hardware & software troubleshooting, Windows OS installation, routine diagnostics, and rapid remote/on-site end-user resolution.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Card 2 -->
+        <div class="p-4 rounded-xl bg-[#111c35]/60 border border-slate-700/40 border transition-all hover:scale-[1.01]">
+          <div class="flex items-start space-x-3">
+            <div class="w-9 h-9 rounded-lg bg-blue-500/10 border border-blue-500/30 flex items-center justify-center shrink-0">
+              <i class="fa-solid fa-network-wired text-blue-400 text-sm"></i>
+            </div>
+            <div>
+              <h3 class="text-xs font-bold text-slate-100" data-i18n="srv2_title">Network & Infrastructure Setup</h3>
+              <p class="text-[11px] leading-relaxed text-slate-400 mt-1" data-i18n="srv2_desc">LAN/WAN setup, router/switch configuration, network cabling, TCP/IP, DHCP, DNS management, and connectivity optimization.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Card 3 -->
+        <div class="p-4 rounded-xl bg-[#111c35]/60 border border-slate-700/40 border transition-all hover:scale-[1.01]">
+          <div class="flex items-start space-x-3">
+            <div class="w-9 h-9 rounded-lg bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center shrink-0">
+              <i class="fa-solid fa-print text-indigo-400 text-sm"></i>
+            </div>
+            <div>
+              <h3 class="text-xs font-bold text-slate-100" data-i18n="srv3_title">Reprographics & Print Management</h3>
+              <p class="text-[11px] leading-relaxed text-slate-400 mt-1" data-i18n="srv3_desc">Operation of commercial printing presses, digital copiers, large-format scanners, calibration, color accuracy, and preventive servicing.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Card 4 -->
+        <div class="p-4 rounded-xl bg-[#111c35]/60 border border-slate-700/40 border transition-all hover:scale-[1.01]">
+          <div class="flex items-start space-x-3">
+            <div class="w-9 h-9 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center shrink-0">
+              <i class="fa-solid fa-shield-halved text-emerald-400 text-sm"></i>
+            </div>
+            <div>
+              <h3 class="text-xs font-bold text-slate-100" data-i18n="srv4_title">System Security & Data Backup</h3>
+              <p class="text-[11px] leading-relaxed text-slate-400 mt-1" data-i18n="srv4_desc">Automated data backup routines, recovery procedures, antivirus/malware removal, system hardening, and secure data storage.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Card 5 -->
+        <div class="p-4 rounded-xl bg-[#111c35]/60 border border-slate-700/40 border transition-all hover:scale-[1.01]">
+          <div class="flex items-start space-x-3">
+            <div class="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center shrink-0">
+              <i class="fa-solid fa-clipboard-check text-amber-400 text-sm"></i>
+            </div>
+            <div>
+              <h3 class="text-xs font-bold text-slate-100" data-i18n="srv5_title">Office Admin & Equipment Operations</h3>
+              <p class="text-[11px] leading-relaxed text-slate-400 mt-1" data-i18n="srv5_desc">Managing multi-function office machines, ticketing logs, IT asset tracking, vendor coordination, and workflow optimization.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Request CTA Button -->
+        <div class="pt-2">
+          <button onclick="switchTab('contact')" class="w-full py-3 px-4 rounded-xl text-xs font-bold uppercase tracking-wider text-center bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-md">
+            <i class="fa-solid fa-paper-plane mr-1.5"></i> Request Service Enquiry
+          </button>
+        </div>
+
+      </section>
+
+      <!-- ================= TAB 3: SKILLS ================= -->
+      <section id="tab-pane-skills" class="tab-pane hidden space-y-4">
+        
+        <div>
+          <h2 class="text-sm font-bold text-slate-100" data-i18n="skills_heading">Technical Skills & Competencies</h2>
+          <p class="text-xs text-slate-400" data-i18n="skills_sub">Practical expertise gained across high-demand enterprise environments.</p>
+        </div>
+
+        <!-- Core Skill Groups -->
+        <div class="space-y-3">
+          
+          <div class="p-3.5 rounded-xl bg-[#111c35]/60 border border-slate-700/40">
+            <h3 class="text-xs font-bold text-cyan-400 mb-2 flex items-center">
+              <i class="fa-brands fa-windows mr-1.5"></i> IT & System Administration
+            </h3>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-1 rounded-md text-[10px] font-semibold bg-slate-800 text-slate-200">Windows OS 10/11</span>
+              <span class="px-2 py-1 rounded-md text-[10px] font-semibold bg-slate-800 text-slate-200">Hardware Assembly</span>
+              <span class="px-2 py-1 rounded-md text-[10px] font-semibold bg-slate-800 text-slate-200">Diagnostics & Repair</span>
+              <span class="px-2 py-1 rounded-md text-[10px] font-semibold bg-slate-800 text-slate-200">Data Backup & Recovery</span>
+              <span class="px-2 py-1 rounded-md text-[10px] font-semibold bg-slate-800 text-slate-200">Antivirus & Security</span>
+            </div>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-[#111c35]/60 border border-slate-700/40">
+            <h3 class="text-xs font-bold text-blue-400 mb-2 flex items-center">
+              <i class="fa-solid fa-network-wired mr-1.5"></i> Networking & Infrastructure
+            </h3>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-1 rounded-md text-[10px] font-semibold bg-slate-800 text-slate-200">LAN / WAN Setup</span>
+              <span class="px-2 py-1 rounded-md text-[10px] font-semibold bg-slate-800 text-slate-200">Routers & Switches</span>
+              <span class="px-2 py-1 rounded-md text-[10px] font-semibold bg-slate-800 text-slate-200">TCP/IP, DHCP, DNS</span>
+              <span class="px-2 py-1 rounded-md text-[10px] font-semibold bg-slate-800 text-slate-200">Network Cabling</span>
+              <span class="px-2 py-1 rounded-md text-[10px] font-semibold bg-slate-800 text-slate-200">Remote Support Tools</span>
+            </div>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-[#111c35]/60 border border-slate-700/40">
+            <h3 class="text-xs font-bold text-indigo-400 mb-2 flex items-center">
+              <i class="fa-solid fa-print mr-1.5"></i> Reprographics & Office Equipment
+            </h3>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-1 rounded-md text-[10px] font-semibold bg-slate-800 text-slate-200">Commercial Printing Machines</span>
+              <span class="px-2 py-1 rounded-md text-[10px] font-semibold bg-slate-800 text-slate-200">Digital Copiers & Scanners</span>
+              <span class="px-2 py-1 rounded-md text-[10px] font-semibold bg-slate-800 text-slate-200">Machine Calibration</span>
+              <span class="px-2 py-1 rounded-md text-[10px] font-semibold bg-slate-800 text-slate-200">Preventive Maintenance</span>
+              <span class="px-2 py-1 rounded-md text-[10px] font-semibold bg-slate-800 text-slate-200">Print Workflow Planning</span>
+            </div>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-[#111c35]/60 border border-slate-700/40">
+            <h3 class="text-xs font-bold text-emerald-400 mb-2 flex items-center">
+              <i class="fa-solid fa-file-lines mr-1.5"></i> Administration & Software
+            </h3>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-1 rounded-md text-[10px] font-semibold bg-slate-800 text-slate-200">MS Office Suite</span>
+              <span class="px-2 py-1 rounded-md text-[10px] font-semibold bg-slate-800 text-slate-200">Email Administration</span>
+              <span class="px-2 py-1 rounded-md text-[10px] font-semibold bg-slate-800 text-slate-200">IT Logs & Documentation</span>
+              <span class="px-2 py-1 rounded-md text-[10px] font-semibold bg-slate-800 text-slate-200">AutoCAD Basics</span>
+              <span class="px-2 py-1 rounded-md text-[10px] font-semibold bg-slate-800 text-slate-200">Office Operations</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Education & Certifications -->
+        <div class="p-4 rounded-xl bg-[#111c35]/60 border border-slate-700/40">
+          <h2 class="text-xs font-bold uppercase tracking-wider text-cyan-400 mb-3" data-i18n="edu_heading">Education & Certifications</h2>
+          
+          <div class="space-y-2.5 text-xs">
+            <div class="flex items-start space-x-2">
+              <i class="fa-solid fa-graduation-cap text-cyan-400 mt-0.5"></i>
+              <div>
+                <p class="font-bold text-slate-100">B.Com (Bachelor of Commerce)</p>
+                <p class="text-[11px] text-slate-400">Rabindranath Tagore University | 2026</p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-2">
+              <i class="fa-solid fa-certificate text-emerald-400 mt-0.5"></i>
+              <div>
+                <p class="font-bold text-slate-100">Professional Certifications</p>
+                <p class="text-[11px] text-slate-400">Computer Hardware & Maintenance • Networking Configuration • Office Management • AutoCAD</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ================= TAB 4: CONTACT & ENQUIRIES ================= -->
+      <section id="tab-pane-contact" class="tab-pane hidden space-y-4">
+        
+        <div>
+          <h2 class="text-sm font-bold text-slate-100" data-i18n="contact_heading">Get In Touch</h2>
+          <p class="text-xs text-slate-400" data-i18n="contact_sub">Available for IT Support, System Administration, and Reprographic Operations.</p>
+        </div>
+
+        <!-- Direct Contact Cards -->
+        <div class="grid grid-cols-1 gap-2.5">
+          <a href="tel:+916235712497" class="p-3 rounded-xl bg-[#111c35]/60 border border-slate-700/40 flex items-center space-x-3 transition-all hover:border-cyan-500/50">
+            <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0">
+              <i class="fa-solid fa-phone text-xs"></i>
+            </div>
+            <div class="flex-1 overflow-hidden">
+              <p class="text-[10px] text-slate-400 uppercase font-semibold" data-i18n="direct_phone_lbl">Primary Phone</p>
+              <p class="text-xs font-bold text-slate-100 truncate">+91 6235712497</p>
+            </div>
+          </a>
+
+          <a href="mailto:shabinthaj142@gmail.com" class="p-3 rounded-xl bg-[#111c35]/60 border border-slate-700/40 flex items-center space-x-3 transition-all hover:border-cyan-500/50">
+            <div class="w-8 h-8 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center shrink-0">
+              <i class="fa-solid fa-envelope text-xs"></i>
+            </div>
+            <div class="flex-1 overflow-hidden">
+              <p class="text-[10px] text-slate-400 uppercase font-semibold" data-i18n="direct_email_lbl">Official Email</p>
+              <p class="text-xs font-bold text-slate-100 truncate">shabinthaj142@gmail.com</p>
+            </div>
+          </a>
+
+          <a href="https://maps.google.com/?q=Nedumangad,+Trivandrum,+Kerala" target="_blank" class="p-3 rounded-xl bg-[#111c35]/60 border border-slate-700/40 flex items-center space-x-3 transition-all hover:border-cyan-500/50">
+            <div class="w-8 h-8 rounded-lg bg-rose-500/10 text-rose-400 flex items-center justify-center shrink-0">
+              <i class="fa-solid fa-map-location-dot text-xs"></i>
+            </div>
+            <div class="flex-1 overflow-hidden">
+              <p class="text-[10px] text-slate-400 uppercase font-semibold" data-i18n="direct_address_lbl">Location</p>
+              <p class="text-xs font-bold text-slate-100 truncate" data-i18n="location">Nedumangad, Trivandrum, Kerala, India</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Google Sheets Lead Capture Form -->
+        <div class="p-4 rounded-2xl bg-[#111c35]/60 border border-slate-700/40">
+          <div class="flex items-center space-x-2 mb-3">
+            <i class="fa-solid fa-paper-plane text-xs text-cyan-400"></i>
+            <h3 class="text-xs font-bold uppercase tracking-wider text-cyan-400">Send Direct Enquiry</h3>
+          </div>
+
+          <form id="lead-form" onsubmit="handleLeadSubmit(event)" class="space-y-3">
+            <div>
+              <label class="block text-[11px] font-semibold text-slate-300 mb-1" data-i18n="form_name">Full Name</label>
+              <input type="text" id="lead_name" required placeholder="Your name" class="w-full px-3 py-2 text-xs rounded-xl border bg-slate-900/80 border-slate-700 text-slate-100 placeholder-slate-500 focus:border-cyan-400 focus:ring-cyan-400/20 outline-none transition-all" data-i18n-ph="form_name">
+            </div>
+
+            <div>
+              <label class="block text-[11px] font-semibold text-slate-300 mb-1" data-i18n="form_phone">Phone / WhatsApp Number</label>
+              <input type="tel" id="lead_phone" required placeholder="+91..." class="w-full px-3 py-2 text-xs rounded-xl border bg-slate-900/80 border-slate-700 text-slate-100 placeholder-slate-500 focus:border-cyan-400 focus:ring-cyan-400/20 outline-none transition-all" data-i18n-ph="form_phone">
+            </div>
+
+            <div>
+              <label class="block text-[11px] font-semibold text-slate-300 mb-1" data-i18n="form_service">Select Service Required</label>
+              <select id="lead_service" class="w-full px-3 py-2 text-xs rounded-xl border bg-slate-900/80 border-slate-700 text-slate-100 placeholder-slate-500 focus:border-cyan-400 focus:ring-cyan-400/20 outline-none transition-all">
+                <option value="IT Support & Diagnostics" data-i18n="form_srv_opt1">IT Support & Diagnostics</option>
+                <option value="Networking & Router Setup" data-i18n="form_srv_opt2">Networking & Router Setup</option>
+                <option value="Reprographics & Print Management" data-i18n="form_srv_opt3">Reprographics & Print Management</option>
+                <option value="Data Backup & Recovery" data-i18n="form_srv_opt4">Data Backup & Recovery</option>
+                <option value="General Inquiry / Consultation" data-i18n="form_srv_opt5">General Inquiry / Consultation</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-[11px] font-semibold text-slate-300 mb-1" data-i18n="form_msg">Message / Details</label>
+              <textarea id="lead_message" rows="3" placeholder="Briefly describe your requirements..." class="w-full px-3 py-2 text-xs rounded-xl border bg-slate-900/80 border-slate-700 text-slate-100 placeholder-slate-500 focus:border-cyan-400 focus:ring-cyan-400/20 outline-none transition-all" data-i18n-ph="form_msg"></textarea>
+            </div>
+
+            <button type="submit" id="submit-btn" class="w-full py-3 px-4 rounded-xl font-bold text-xs uppercase tracking-wide transition-all bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg active:scale-98">
+              <span id="submit-btn-text" data-i18n="form_submit">Send Enquiry via Form & WhatsApp</span>
+            </button>
+          </form>
+
+          <p id="form-status" class="hidden text-center text-xs mt-3 text-emerald-400 font-semibold" data-i18n="form_success"></p>
+        </div>
+
+      </section>
+
+    </div>
+
+    <!-- QR Code & Share Modal -->
+    <div id="share-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden">
+      <div class="w-full max-w-sm rounded-2xl p-6 bg-[#111c35]/60 border border-slate-700/40 border border-slate-700 shadow-2xl text-center relative animate-fade-in">
+        <button onclick="closeShareModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-lg">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <h3 class="text-base font-bold text-white mb-1" data-i18n="qr_modal_title">Scan Digital Business Card</h3>
+        <p class="text-xs text-slate-400 mb-4" data-i18n="qr_modal_sub">Scan with any smartphone camera to open and save this profile.</p>
+
+        <!-- Dynamic QR Code Container -->
+        <div class="p-4 bg-white rounded-xl inline-block mx-auto shadow-md mb-4" id="qrcode-container"></div>
+
+        <div class="space-y-2 mt-2">
+          <button onclick="copyCardUrl()" class="w-full py-2.5 px-4 rounded-xl text-xs font-bold border bg-slate-800 text-slate-200 border-slate-700 hover:bg-slate-700 flex items-center justify-center space-x-2">
+            <i class="fa-regular fa-copy"></i>
+            <span id="copy-btn-text">Copy Card URL</span>
+          </button>
+          
+          <button onclick="closeShareModal()" class="w-full py-2 px-4 rounded-xl text-xs font-medium text-slate-400 hover:text-slate-200" data-i18n="btn_close">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-4 py-2 rounded-xl bg-slate-900/95 text-white text-xs font-semibold shadow-2xl border border-cyan-500/40 opacity-0 pointer-events-none transition-all duration-300">
+      Link copied to clipboard!
+    </div>
+
+    <!-- Footer Credit -->
+    <footer class="px-5 py-4 text-center border-t border-slate-800/80 text-slate-500 text-[10px]">
+      <p>Digital Business Card • Shabin T. R</p>
+      <p class="mt-0.5">Designed with Mobile-First Standards & Offline vCard 3.0</p>
+    </footer>
+
+  </main>
+
+  <!-- JavaScript Configuration & Interactivity -->
+  <script>
+    /* ==========================================================================
+       USER_CONFIG: CUSTOMIZE CARD HOLDER DETAILS HERE
+       ========================================================================== */
+    const CARD_CONFIG = {
+      name: "Shabin T. R",
+      firstName: "Shabin",
+      lastName: "T. R",
+      title: "IT Support & Office Administration Professional",
+      company: "IT Support, Reprographics & Network Infrastructure",
+      phone: "+916235712497",
+      whatsapp: "916235712497",
+      email: "shabinthaj142@gmail.com",
+      address: "Nedumangad, Trivandrum, Kerala, India",
+      googleSheetWebhookUrl: "YOUR_GOOGLE_APPS_SCRIPT_WEBAPP_URL_HERE",
+      primaryLanguage: "en",
+      secondaryLanguage: "ml"
+    };
+
+    const I18N = {"en": {"verified": "Verified Professional", "name": "Shabin T. R", "title": "IT Support & Office Administration", "company": "12+ Years Experience • UAE & India Track Record", "location": "Nedumangad, Trivandrum, Kerala, India", "btn_save_contact": "Save Contact", "btn_share": "Share Card", "quick_call": "Call", "quick_whatsapp": "WhatsApp", "quick_email": "Email", "quick_directions": "Directions", "tab_profile": "Profile", "tab_services": "Services", "tab_skills": "Skills & Exp", "tab_contact": "Contact", "about_heading": "Professional Summary", "about_text": "Detail-oriented IT Support & Office Administration Professional with over 12 years of hands-on experience in technical troubleshooting, network setup, system maintenance, commercial reprographic operations, and office workflow coordination across UAE and India.", "stat_exp": "12+ Years", "stat_exp_lbl": "Experience", "stat_orgs": "5+ Firms", "stat_orgs_lbl": "UAE & India", "stat_skills": "IT & Repro", "stat_skills_lbl": "Dual Expertise", "stat_support": "24/7", "stat_support_lbl": "Support Ready", "career_heading": "Career Milestones", "exp1_role": "Machine Operator", "exp1_co": "Al Deera Printing • Abu Dhabi, UAE (2025–Present)", "exp1_desc": "Commercial printing machines, preventive maintenance, workflow management & calibration.", "exp2_role": "Computer Technician & Reprographic Operator", "exp2_co": "Global Digital Copy Centre • Abu Dhabi, UAE (2017–2025)", "exp2_desc": "High-volume digital printing, OS installation, hardware maintenance, network troubleshooting & staff training.", "exp3_role": "Computer & Network Technician", "exp3_co": "Freeling • India (2015–2016)", "exp3_desc": "LAN setup, network troubleshooting, hardware/software upgrades, on-site/remote support.", "exp4_role": "System Service Engineer", "exp4_co": "Micro Medi Tech • Trivandrum (2013–2015)", "exp4_desc": "Hardware/software servicing, system diagnostics, network configurations, performance optimization.", "exp5_role": "Airport Ground Staff", "exp5_co": "Indira Gandhi International Airport • Delhi (2012–2013)", "exp5_desc": "Ground support, ticketing/baggage coordination, passenger assistance & safety operations.", "services_heading": "Key Services & Expertise", "services_sub": "End-to-end technical support and office infrastructure management.", "srv1_title": "IT Support & Help Desk", "srv1_desc": "Hardware & software troubleshooting, Windows OS installation, routine diagnostics, and rapid remote/on-site end-user resolution.", "srv2_title": "Network & Infrastructure Setup", "srv2_desc": "LAN/WAN setup, router/switch configuration, network cabling, TCP/IP, DHCP, DNS management, and connectivity optimization.", "srv3_title": "Reprographics & Print Management", "srv3_desc": "Operation of commercial printing presses, digital copiers, large-format scanners, calibration, color accuracy, and preventive servicing.", "srv4_title": "System Security & Data Backup", "srv4_desc": "Automated data backup routines, recovery procedures, antivirus/malware removal, system hardening, and secure data storage.", "srv5_title": "Office Admin & Equipment Operations", "srv5_desc": "Managing multi-function office machines, ticketing logs, IT asset tracking, vendor coordination, and workflow optimization.", "skills_heading": "Technical Skills & Competencies", "skills_sub": "Practical expertise gained across high-demand enterprise environments.", "edu_heading": "Education & Certifications", "contact_heading": "Get In Touch", "contact_sub": "Available for IT Support, System Administration, and Reprographic Operations.", "form_name": "Full Name", "form_phone": "Phone / WhatsApp Number", "form_service": "Select Service Required", "form_srv_opt1": "IT Support & Diagnostics", "form_srv_opt2": "Networking & Router Setup", "form_srv_opt3": "Reprographics & Print Management", "form_srv_opt4": "Data Backup & Recovery", "form_srv_opt5": "General Inquiry / Consultation", "form_msg": "Message / Project Details", "form_submit": "Send Enquiry via Form & WhatsApp", "form_sending": "Submitting Enquiry...", "form_success": "Thank you! Your enquiry has been received. Redirecting to WhatsApp for instant confirmation...", "direct_contact": "Direct Information", "direct_phone_lbl": "Primary Phone", "direct_email_lbl": "Official Email", "direct_address_lbl": "Location", "qr_modal_title": "Scan Digital Business Card", "qr_modal_sub": "Scan with any smartphone camera to open and save this profile.", "btn_close": "Close", "toast_copied": "Link copied to clipboard!"}, "ml": {"verified": "സ്ഥിരീകരിച്ച പ്രൊഫഷണൽ", "name": "ഷാബിൻ ടി. ആർ.", "title": "ഐടി സപ്പോർട്ട് & ഓഫീസ് അഡ്മിനിസ്ട്രേഷൻ", "company": "12+ വർഷത്തെ പ്രവൃത്തിപരിചയം • യു.എ.ഇ & ഇന്ത്യ", "location": "നെടുമങ്ങാട്, തിരുവനന്തപുരം, കേരളം", "btn_save_contact": "കോൺടാക്റ്റ് സേവ് ചെയ്യുക", "btn_share": "കാർഡ് ഷെയർ ചെയ്യുക", "quick_call": "കോൾ", "quick_whatsapp": "വാട്സാപ്പ്", "quick_email": "ഇമെയിൽ", "quick_directions": "ലൊക്കേഷൻ", "tab_profile": "പ്രൊഫൈൽ", "tab_services": "സേവനങ്ങൾ", "tab_skills": "വൈദഗ്ധ്യം", "tab_contact": "ബന്ധപ്പെടുക", "about_heading": "പ്രൊഫഷണൽ സംഗ്രഹം", "about_text": "ഐടി സാങ്കേതിക സപ്പോർട്ട്, നെറ്റ്‌വർക്കിംഗ്, കമ്പ്യൂട്ടർ സിസ്റ്റം മെയിന്റനൻസ്, കൊമേഴ്‌സ്യൽ പ്രിന്റിംഗ് മെഷീൻ പ്രവർത്തനം, ഓഫീസ് അഡ്മിനിസ്ട്രേഷൻ എന്നിവയിൽ യു.എ.ഇയിലും ഇന്ത്യയിലുമായി 12-ലധികം വർഷത്തെ മികച്ച പ്രവൃത്തിപരിചയമുള്ള വിദഗ്ദ്ധൻ.", "stat_exp": "12+ വർഷം", "stat_exp_lbl": "പ്രവൃത്തിപരിചയം", "stat_orgs": "5+ സ്ഥാപനങ്ങൾ", "stat_orgs_lbl": "യു.എ.ഇ & ഇന്ത്യ", "stat_skills": "ഐടി & പ്രിന്റ്", "stat_skills_lbl": "ഇരട്ട വൈദഗ്ധ്യം", "stat_support": "24/7", "stat_support_lbl": "സപ്പോർട്ട് റെഡി", "career_heading": "തൊഴിൽ അനുഭവങ്ങൾ", "exp1_role": "മെഷീൻ ഓപ്പറേറ്റർ", "exp1_co": "അൽ ദീര പ്രിന്റിംഗ് • അബുദാബി, യു.എ.ഇ (2025–നിലവിൽ)", "exp1_desc": "കൊമേഴ്‌സ്യൽ പ്രിന്റിംഗ് മെഷീനുകൾ, പ്രിവന്റീവ് മെയിന്റനൻസ്, വർക്ക്ഫ്ലോ മാനേജ്‌മെന്റ്.", "exp2_role": "കമ്പ്യൂട്ടർ ടെക്നീഷ്യൻ & റിപ്രോഗ്രാഫിക് ഓപ്പറേറ്റർ", "exp2_co": "ഗ്ലോബൽ ഡിജിറ്റൽ കോപ്പി സെന്റർ • അബുദാബി, യു.എ.ഇ (2017–2025)", "exp2_desc": "ഹൈ-വോളിയം ഡിജിറ്റൽ പ്രിന്റിംഗ്, ഒഎസ് ഇൻസ്റ്റാളേഷൻ, ഹാർഡ്‌വെയർ ട്രബിൾഷൂട്ടിംഗ്, സ്റ്റാഫ് ട്രെയിനിംഗ്.", "exp3_role": "കമ്പ്യൂട്ടർ & നെറ്റ്‌വർക്ക് ടെക്നീഷ്യൻ", "exp3_co": "ഫ്രീലിംഗ് • ഇന്ത്യ (2015–2016)", "exp3_desc": "ലാൻ കണക്റ്റിവിറ്റി, നെറ്റ്‌വർക്ക് ട്രബിൾഷൂട്ടിംഗ്, ഹാർഡ്‌വെയർ അപ്‌ഗ്രേഡുകൾ, ഓൺ-സൈറ്റ്/റിമോട്ട് സപ്പോർട്ട്.", "exp4_role": "സിസ്റ്റം സർവീസ് എഞ്ചിനീയർ", "exp4_co": "മൈക്രോ മെഡി ടെക് • തിരുവനന്തപുരം (2013–2015)", "exp4_desc": "ഹാർഡ്‌വെയർ സർവീസിംഗ്, സിസ്റ്റം ഡയഗ്നോസ്റ്റിക്സ്, നെറ്റ്‌വർക്ക് സെറ്റപ്പുകൾ, കൃത്യമായ ഡോക്യുമെന്റേഷൻ.", "exp5_role": "എയർപോർട്ട് ഗ്രൗണ്ട് സ്റ്റാഫ്", "exp5_co": "ഇന്ദിരാഗാന്ധി ഇന്റർനാഷണൽ എയർപോർട്ട് • ഡൽഹി (2012–2013)", "exp5_desc": "ചെക്ക്-ഇൻ, ബോർഡിംഗ്, ബാഗേജ് കോർഡിനേഷൻ, പാസഞ്ചർ സപ്പോർട്ട് & സേഫ്റ്റി.", "services_heading": "പ്രധാന സേവനങ്ങൾ", "services_sub": "വിശ്വസനീയമായ ഐടി സപ്പോർട്ടും ഓഫീസ് സാങ്കേതിക സൗകര്യങ്ങളും.", "srv1_title": "ഐടി സപ്പോർട്ട് & ഹെൽപ്പ് ഡെസ്ക്", "srv1_desc": "ഹാർഡ്‌വെയർ & സോഫ്റ്റ്‌വെയർ ട്രബിൾഷൂട്ടിംഗ്, വിൻഡോസ് ഒഎസ് ഇൻസ്റ്റാളേഷൻ, റിമോട്ട്/ഓൺ-സൈറ്റ് ടെക്നിക്കൽ സപ്പോർട്ട്.", "srv2_title": "നെറ്റ്‌വർക്ക് ഇൻഫ്രാസ്ട്രക്ചർ സെറ്റപ്പ്", "srv2_desc": "ലാൻ/വാൻ സെറ്റപ്പ്, റൂട്ടർ & സ്വിച്ച് കോൺഫിഗറേഷൻ, കേബിളിംഗ്, ടിസിപി/ഐപി, ഡിഎൻഎസ് മാനേജ്മെന്റ്.", "srv3_title": "റിപ്രോഗ്രാഫിക്സ് & പ്രിന്റ് മാനേജ്‌മെന്റ്", "srv3_desc": "കൊമേഴ്‌സ്യൽ പ്രിന്റിംഗ് മെഷീനുകൾ, ഡിജിറ്റൽ കോപ്പിയറുകൾ, ലാർജ് സ്കാനറുകൾ, കാലിബ്രേഷൻ, പ്രിവന്റീവ് മെയിന്റനൻസ്.", "srv4_title": "സിസ്റ്റം സുരക്ഷ & ഡാറ്റ ബാക്കപ്പ്", "srv4_desc": "റെഗുലർ ഡാറ്റ ബാക്കപ്പ്, റിക്കവറി നടപടിക്രമങ്ങൾ, ആന്റിവൈറസ്/മാൽവെയർ നീക്കം ചെയ്യൽ, സിസ്റ്റം പ്രൊട്ടക്ഷൻ.", "srv5_title": "ഓഫീസ് അഡ്മിൻ & ഉപകരണങ്ങൾ", "srv5_desc": "ഓഫീസ് ഉപകരണങ്ങളുടെ പ്രവർത്തനം, ടിക്കറ്റിംഗ് ലോഗുകൾ, ഐടി അസറ്റ് മാനേജ്മെന്റ്, വർക്ക്ഫ്ലോ ക്രമീകരണം.", "skills_heading": "സാങ്കേതിക വൈദഗ്ധ്യങ്ങൾ", "skills_sub": "വിവിധ പ്രൊഫഷണൽ സ്ഥാപനങ്ങളിൽ നിന്നുള്ള പ്രായോഗിക അറിവ്.", "edu_heading": "വിദ്യാഭ്യാസം & സർട്ടിഫിക്കറ്റുകൾ", "contact_heading": "ബന്ധപ്പെടുക", "contact_sub": "ഐടി സപ്പോർട്ട്, സിസ്റ്റം അഡ്മിനിസ്ട്രേഷൻ, പ്രിന്റിംഗ് സേവനങ്ങൾക്കായി ബന്ധപ്പെടുക.", "form_name": "പൂർണ്ണമായ പേര്", "form_phone": "ഫോൺ / വാട്സാപ്പ് നമ്പർ", "form_service": "ആവശ്യമായ സേവനം തിരഞ്ഞെടുക്കുക", "form_srv_opt1": "ഐടി സപ്പോർട്ട് & ഡയഗ്നോസ്റ്റിക്സ്", "form_srv_opt2": "നെറ്റ്‌വർക്കിംഗ് & റൂട്ടർ സെറ്റപ്പ്", "form_srv_opt3": "റിപ്രോഗ്രാഫിക്സ് & പ്രിന്റ് സർവീസസ്", "form_srv_opt4": "ഡാറ്റ ബാക്കപ്പ് & റിക്കവറി", "form_srv_opt5": "ജനറൽ വിവരങ്ങൾ / കൺസൾട്ടേഷൻ", "form_msg": "സന്ദേശം / ആവശ്യങ്ങൾ", "form_submit": "വിവരങ്ങൾ അയക്കുക (ഫോം & വാട്സാപ്പ്)", "form_sending": "അയക്കുന്നു...", "form_success": "നന്ദി! താങ്കളുടെ വിവരങ്ങൾ ലഭിച്ചു. ഉടൻ തന്നെ വാട്സാപ്പിൽ സന്ദേശം ലഭിക്കുന്നതാണ്...", "direct_contact": "നേരിട്ടുള്ള വിവരങ്ങൾ", "direct_phone_lbl": "ഫോൺ നമ്പർ", "direct_email_lbl": "ഇമെയിൽ വിലാസം", "direct_address_lbl": "ലൊക്കേഷൻ", "qr_modal_title": "ഡിജിറ്റൽ കാർഡ് സ്കാൻ ചെയ്യുക", "qr_modal_sub": "സ്മാർട്ട്ഫോൺ ക്യാമറ ഉപയോഗിച്ച് സ്കാൻ ചെയ്ത് കാർഡ് തുറക്കൂ.", "btn_close": "ക്ലോസ്", "toast_copied": "ലിങ്ക് കോപ്പി ചെയ്തു!"}};
+
+    let currentLang = localStorage.getItem('shabin_card_lang') || 'en';
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('shabin_card_lang', lang);
+
+      // Update text nodes
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (I18N[lang] && I18N[lang][key]) {
+          el.textContent = I18N[lang][key];
+        }
+      });
+
+      // Update input placeholders
+      document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+        const key = el.getAttribute('data-i18n-ph');
+        if (I18N[lang] && I18N[lang][key]) {
+          el.placeholder = I18N[lang][key];
+        }
+      });
+
+      // Update Lang Switcher button text
+      const btnText = document.getElementById('lang-btn-text');
+      if (btnText) {
+        btnText.textContent = (lang === 'en') ? 'മലയാളം' : 'English';
+      }
+    }
+
+    function toggleLanguage() {
+      const nextLang = (currentLang === 'en') ? 'ml' : 'en';
+      setLanguage(nextLang);
+    }
+
+    // Tab Navigation Logic
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-pane').forEach(el => el.classList.add('hidden'));
+      const activePane = document.getElementById('tab-pane-' + tabId);
+      if (activePane) activePane.classList.remove('hidden');
+
+      // Update active tab buttons styling
+      const isDark = true;
+      const activeClass = isDark 
+        ? ['bg-cyan-500', 'text-slate-950', 'font-semibold', 'shadow-lg', 'shadow-cyan-500/30']
+        : ['bg-sky-600', 'text-white', 'font-semibold', 'shadow-md'];
+
+      const inactiveClass = isDark
+        ? ['text-slate-400']
+        : ['text-slate-600'];
+
+      ['profile', 'services', 'skills', 'contact'].forEach(id => {
+        const btn = document.getElementById('tab-btn-' + id);
+        if (btn) {
+          if (id === tabId) {
+            btn.classList.add(...activeClass);
+            btn.classList.remove(...inactiveClass);
+          } else {
+            btn.classList.remove(...activeClass);
+            btn.classList.add(...inactiveClass);
+          }
+        }
+      });
+    }
+
+    // Offline vCard 3.0 (.vcf) Generator
+    function downloadVCard() {
+      const vcard = [
+        'BEGIN:VCARD',
+        'VERSION:3.0',
+        `N:${CARD_CONFIG.lastName};${CARD_CONFIG.firstName};;;`,
+        `FN:${CARD_CONFIG.name}`,
+        `ORG:${CARD_CONFIG.company}`,
+        `TITLE:${CARD_CONFIG.title}`,
+        `TEL;TYPE=CELL,VOICE:${CARD_CONFIG.phone}`,
+        `EMAIL;TYPE=WORK,INTERNET:${CARD_CONFIG.email}`,
+        `ADR;TYPE=HOME:;;Nedumangad;Trivandrum;Kerala;;India`,
+        `URL:${window.location.href}`,
+        'NOTE:IT Support, Network Configuration, Reprographics & Office Administration (12+ Years Experience)',
+        'END:VCARD'
+      ].join('\r\n');
+
+      const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `${CARD_CONFIG.name.replace(/\s+/g, '_')}.vcf`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(() => URL.revokeObjectURL(url), 2000);
+      showToast('vCard downloaded successfully!');
+    }
+
+    // Share Modal & Web Share API
+    function openShareModal() {
+      if (navigator.share) {
+        navigator.share({
+          title: 'Shabin T. R - Digital Card',
+          text: 'Check out the digital business card of Shabin T. R (IT Support & Office Administration):',
+          url: window.location.href
+        }).catch(() => {
+          showShareModalFallback();
+        });
+      } else {
+        showShareModalFallback();
+      }
+    }
+
+    function showShareModalFallback() {
+      const modal = document.getElementById('share-modal');
+      modal.classList.remove('hidden');
+      renderQRCode();
+    }
+
+    function closeShareModal() {
+      document.getElementById('share-modal').classList.add('hidden');
+    }
+
+    function renderQRCode() {
+      const container = document.getElementById('qrcode-container');
+      container.innerHTML = '';
+      try {
+        new QRCode(container, {
+          text: window.location.href,
+          width: 160,
+          height: 160,
+          colorDark: "#000000",
+          colorLight: "#ffffff",
+          correctLevel: QRCode.CorrectLevel.M
+        });
+      } catch(e) {
+        container.innerHTML = '<p class="text-xs text-slate-500">QR Code will render on live URL.</p>';
+      }
+    }
+
+    function copyCardUrl() {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        const copyBtnText = document.getElementById('copy-btn-text');
+        copyBtnText.textContent = 'Copied!';
+        showToast(I18N[currentLang]['toast_copied'] || 'Link copied to clipboard!');
+        setTimeout(() => {
+          copyBtnText.textContent = 'Copy Card URL';
+        }, 2000);
+      });
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.classList.remove('opacity-0', 'pointer-events-none');
+      toast.classList.add('opacity-100');
+      setTimeout(() => {
+        toast.classList.remove('opacity-100');
+        toast.classList.add('opacity-0', 'pointer-events-none');
+      }, 2500);
+    }
+
+    // Lead Capture Form Handler (Google Apps Script + WhatsApp Fail-Safe)
+    async function handleLeadSubmit(e) {
+      e.preventDefault();
+      const submitBtn = document.getElementById('submit-btn');
+      const submitBtnText = document.getElementById('submit-btn-text');
+      const statusEl = document.getElementById('form-status');
+
+      const name = document.getElementById('lead_name').value.trim();
+      const phone = document.getElementById('lead_phone').value.trim();
+      const service = document.getElementById('lead_service').value;
+      const message = document.getElementById('lead_message').value.trim();
+
+      submitBtn.disabled = true;
+      submitBtnText.textContent = I18N[currentLang]['form_sending'] || 'Submitting...';
+
+      const payload = {
+        name: name,
+        phone: phone,
+        service: service,
+        message: message,
+        language: currentLang,
+        timestamp: new Date().toISOString()
+      };
+
+      // 1. Send to Google Apps Script Webhook if configured
+      if (CARD_CONFIG.googleSheetWebhookUrl && CARD_CONFIG.googleSheetWebhookUrl.startsWith('http')) {
+        try {
+          fetch(CARD_CONFIG.googleSheetWebhookUrl, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+        } catch(err) {
+          console.warn('Webhook logging error:', err);
+        }
+      }
+
+      // 2. Open WhatsApp as instant direct fail-safe
+      setTimeout(() => {
+        statusEl.classList.remove('hidden');
+        submitBtnText.textContent = I18N[currentLang]['form_submit'] || 'Send Enquiry';
+        submitBtn.disabled = false;
+
+        const waText = encodeURIComponent(
+          `*New Enquiry via Digital Card*\n` +
+          `• Name: ${name}\n` +
+          `• Phone: ${phone}\n` +
+          `• Service: ${service}\n` +
+          `• Message: ${message || 'General Enquiry'}`
+        );
+        window.open(`https://wa.me/${CARD_CONFIG.whatsapp}?text=${waText}`, '_blank');
+      }, 600);
+    }
+
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      setLanguage(currentLang);
+    });
+  </script>
+</body>
+</html>
